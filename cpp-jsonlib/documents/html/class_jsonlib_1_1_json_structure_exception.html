@@ -9,18 +9,8 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
-<script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="resize.js"></script>
-<script type="text/javascript" src="cookie.js"></script>
-<link href="search/search.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="search/searchdata.js"></script>
-<script type="text/javascript" src="search/search.js"></script>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-  $(function() { init_search(); });
-/* @license-end */
-</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -34,29 +24,12 @@
    </div>
    <div id="projectbrief">现代C++JSON解析库（C++17)</div>
   </td>
-    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
-        <span class="left">
-          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
-          <input type="text" id="MSearchField" value="" placeholder="搜索" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
-          </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
-          </span>
-        </div>
-</td>
  </tr>
  </tbody>
 </table>
 </div>
 <!-- end header part -->
 <!-- 制作者 Doxygen 1.13.2 -->
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-var searchBox = new SearchBox("searchBox", "search/",'.html');
-/* @license-end */
-</script>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
 $(function() { codefold.init(0); });
@@ -67,30 +40,9 @@ $(function() { codefold.init(0); });
 $(function(){ initResizable(false); });
 /* @license-end */
 </script>
-<!-- window showing the filter options -->
-<div id="MSearchSelectWindow"
-     onmouseover="return searchBox.OnSearchSelectShow()"
-     onmouseout="return searchBox.OnSearchSelectHide()"
-     onkeydown="return searchBox.OnSearchSelectKey(event)">
-</div>
-
-<!-- iframe showing the search results (closed by default) -->
-<div id="MSearchResultsWindow">
-<div id="MSearchResults">
-<div class="SRPage">
-<div id="SRIndex">
-<div id="SRResults"></div>
-<div class="SRStatus" id="Loading">载入中...</div>
-<div class="SRStatus" id="Searching">搜索中...</div>
-<div class="SRStatus" id="NoMatches">未找到</div>
-</div>
-</div>
-</div>
-</div>
-
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><b>Jsonlib</b></li><li class="navelem"><a class="el" href="class_jsonlib_1_1_json_structure_exception.html">JsonStructureException</a></li>  </ul>
+<li class="navelem"><a class="el" href="namespace_jsonlib.html">Jsonlib</a></li><li class="navelem"><a class="el" href="class_jsonlib_1_1_json_structure_exception.html">JsonStructureException</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div id="doc-content">
@@ -109,36 +61,88 @@ $(function(){ initResizable(false); });
 <div class="dynheader">
 类 Jsonlib::JsonStructureException 继承关系图:</div>
 <div class="dyncontent">
- <div class="center">
-  <img src="class_jsonlib_1_1_json_structure_exception.png" usemap="#Jsonlib::JsonStructureException_map" alt=""/>
-  <map id="Jsonlib::JsonStructureException_map" name="Jsonlib::JsonStructureException_map">
-<area href="class_jsonlib_1_1_json_exception.html" title="Json专用异常基类类" alt="Jsonlib::JsonException" shape="rect" coords="0,56,192,80"/>
-  </map>
-</div></div>
+<div class="center"><img src="class_jsonlib_1_1_json_structure_exception__inherit__graph.png" border="0" usemap="#a_jsonlib_1_1_json_structure_exception_inherit__map" alt="Inheritance graph"/></div>
+<center><span class="legend">[<a href="graph_legend.html">图例</a>]</span></center></div>
+<div class="dynheader">
+Jsonlib::JsonStructureException 的协作图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_jsonlib_1_1_json_structure_exception__coll__graph.png" border="0" usemap="#a_jsonlib_1_1_json_structure_exception_coll__map" alt="Collaboration graph"/></div>
+<center><span class="legend">[<a href="graph_legend.html">图例</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public 成员函数</h2></td></tr>
-<tr class="memitem:a8a1219f748bfdaafeea14635b2e1510c" id="r_a8a1219f748bfdaafeea14635b2e1510c"><td class="memItemLeft" align="right" valign="top"><a id="a8a1219f748bfdaafeea14635b2e1510c" name="a8a1219f748bfdaafeea14635b2e1510c"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>JsonStructureException</b> ()</td></tr>
-<tr class="memdesc:a8a1219f748bfdaafeea14635b2e1510c"><td class="mdescLeft">&#160;</td><td class="mdescRight">默认构造函数。 <br /></td></tr>
+<tr class="memitem:a8a1219f748bfdaafeea14635b2e1510c" id="r_a8a1219f748bfdaafeea14635b2e1510c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8a1219f748bfdaafeea14635b2e1510c">JsonStructureException</a> ()</td></tr>
+<tr class="memdesc:a8a1219f748bfdaafeea14635b2e1510c"><td class="mdescLeft">&#160;</td><td class="mdescRight">默认构造函数。  <br /></td></tr>
 <tr class="separator:a8a1219f748bfdaafeea14635b2e1510c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afedb1d4cdd59571c02cef7d14b1bda1e" id="r_afedb1d4cdd59571c02cef7d14b1bda1e"><td class="memItemLeft" align="right" valign="top"><a id="afedb1d4cdd59571c02cef7d14b1bda1e" name="afedb1d4cdd59571c02cef7d14b1bda1e"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>JsonStructureException</b> (const std::string &amp;message)</td></tr>
-<tr class="memdesc:afedb1d4cdd59571c02cef7d14b1bda1e"><td class="mdescLeft">&#160;</td><td class="mdescRight">带异常描述文本的构造函数。 <br /></td></tr>
+<tr class="memitem:afedb1d4cdd59571c02cef7d14b1bda1e" id="r_afedb1d4cdd59571c02cef7d14b1bda1e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afedb1d4cdd59571c02cef7d14b1bda1e">JsonStructureException</a> (const std::string &amp;message)</td></tr>
+<tr class="memdesc:afedb1d4cdd59571c02cef7d14b1bda1e"><td class="mdescLeft">&#160;</td><td class="mdescRight">带异常描述文本的构造函数。  <br /></td></tr>
 <tr class="separator:afedb1d4cdd59571c02cef7d14b1bda1e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_class_jsonlib_1_1_json_exception"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_class_jsonlib_1_1_json_exception')"><img src="closed.png" alt="-"/>&#160;Public 成员函数 继承自 <a class="el" href="class_jsonlib_1_1_json_exception.html">Jsonlib::JsonException</a></td></tr>
-<tr class="memitem:a0713ceb565aab86d9a38421aa2d6ee77 inherit pub_methods_class_jsonlib_1_1_json_exception" id="r_a0713ceb565aab86d9a38421aa2d6ee77"><td class="memItemLeft" align="right" valign="top">
-&#160;</td><td class="memItemRight" valign="bottom"><b>JsonException</b> ()</td></tr>
-<tr class="memdesc:a0713ceb565aab86d9a38421aa2d6ee77 inherit pub_methods_class_jsonlib_1_1_json_exception"><td class="mdescLeft">&#160;</td><td class="mdescRight">默认构造函数。 <br /></td></tr>
+<tr class="memitem:a0713ceb565aab86d9a38421aa2d6ee77 inherit pub_methods_class_jsonlib_1_1_json_exception" id="r_a0713ceb565aab86d9a38421aa2d6ee77"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_jsonlib_1_1_json_exception.html#a0713ceb565aab86d9a38421aa2d6ee77">JsonException</a> ()</td></tr>
+<tr class="memdesc:a0713ceb565aab86d9a38421aa2d6ee77 inherit pub_methods_class_jsonlib_1_1_json_exception"><td class="mdescLeft">&#160;</td><td class="mdescRight">默认构造函数。  <br /></td></tr>
 <tr class="separator:a0713ceb565aab86d9a38421aa2d6ee77 inherit pub_methods_class_jsonlib_1_1_json_exception"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa3f1cb93b5c2823057d67f2e9ab09141 inherit pub_methods_class_jsonlib_1_1_json_exception" id="r_aa3f1cb93b5c2823057d67f2e9ab09141"><td class="memItemLeft" align="right" valign="top">
-&#160;</td><td class="memItemRight" valign="bottom"><b>JsonException</b> (const std::string &amp;message)</td></tr>
-<tr class="memdesc:aa3f1cb93b5c2823057d67f2e9ab09141 inherit pub_methods_class_jsonlib_1_1_json_exception"><td class="mdescLeft">&#160;</td><td class="mdescRight">带异常描述文本的构造函数。 <br /></td></tr>
+<tr class="memitem:aa3f1cb93b5c2823057d67f2e9ab09141 inherit pub_methods_class_jsonlib_1_1_json_exception" id="r_aa3f1cb93b5c2823057d67f2e9ab09141"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_jsonlib_1_1_json_exception.html#aa3f1cb93b5c2823057d67f2e9ab09141">JsonException</a> (const std::string &amp;message)</td></tr>
+<tr class="memdesc:aa3f1cb93b5c2823057d67f2e9ab09141 inherit pub_methods_class_jsonlib_1_1_json_exception"><td class="mdescLeft">&#160;</td><td class="mdescRight">带异常描述文本的构造函数。  <br /></td></tr>
 <tr class="separator:aa3f1cb93b5c2823057d67f2e9ab09141 inherit pub_methods_class_jsonlib_1_1_json_exception"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
 <div class="textblock"><p>Json结构错误异常类 </p>
-</div><hr/>该类的文档由以下文件生成:<ul>
+</div><h2 class="groupheader">构造及析构函数说明</h2>
+<a id="a8a1219f748bfdaafeea14635b2e1510c" name="a8a1219f748bfdaafeea14635b2e1510c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8a1219f748bfdaafeea14635b2e1510c">&#9670;&#160;</a></span>JsonStructureException() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Jsonlib::JsonStructureException::JsonStructureException </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>默认构造函数。 </p>
+
+</div>
+</div>
+<a id="afedb1d4cdd59571c02cef7d14b1bda1e" name="afedb1d4cdd59571c02cef7d14b1bda1e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afedb1d4cdd59571c02cef7d14b1bda1e">&#9670;&#160;</a></span>JsonStructureException() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Jsonlib::JsonStructureException::JsonStructureException </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>message</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>带异常描述文本的构造函数。 </p>
+
+</div>
+</div>
+<hr/>该类的文档由以下文件生成:<ul>
 <li>F:/cpp-jsonlib/include/<a class="el" href="jsonlib_8h_source.html">jsonlib.h</a></li>
 </ul>
 </div><!-- contents -->

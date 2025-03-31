@@ -1,0 +1,98 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>cpp-jsonlib: F:/cpp-jsonlib/src/jsonlib.cpp 文件参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">cpp-jsonlib<span id="projectnumber">&#160;2.0.0</span>
+   </div>
+   <div id="projectbrief">现代C++JSON解析库（C++17)</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){ initResizable(false); });
+/* @license-end */
+</script>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_b7ac11114fbc4dd3226dd1c951458c5e.html">cpp-jsonlib</a></li><li class="navelem"><a class="el" href="dir_f4c56dbabcec0ed260f3c03816b04790.html">src</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div id="doc-content">
+<div class="header">
+  <div class="summary">
+<a href="#namespaces">命名空间</a> &#124;
+<a href="#func-members">函数</a>  </div>
+  <div class="headertitle"><div class="title">jsonlib.cpp 文件参考</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &quot;<a class="el" href="jsonlib_8h_source.html">jsonlib.h</a>&quot;</code><br />
+<code>#include &lt;string&gt;</code><br />
+<code>#include &lt;map&gt;</code><br />
+<code>#include &lt;vector&gt;</code><br />
+<code>#include &lt;sstream&gt;</code><br />
+<code>#include &lt;variant&gt;</code><br />
+<code>#include &lt;exception&gt;</code><br />
+<code>#include &lt;stdexcept&gt;</code><br />
+<code>#include &lt;iostream&gt;</code><br />
+</div><div class="textblock"><div class="dynheader">
+jsonlib.cpp 的引用(Include)关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="jsonlib_8cpp__incl.png" border="0" usemap="#a_f_1_2cpp-jsonlib_2src_2jsonlib_8cpp" alt=""/></div>
+</div>
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
+命名空间</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_jsonlib.html">Jsonlib</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+函数</h2></td></tr>
+<tr class="memitem:aab624da681aa9ab7e1c3bfb21eef873c" id="r_aab624da681aa9ab7e1c3bfb21eef873c"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_jsonlib.html#aab624da681aa9ab7e1c3bfb21eef873c">Jsonlib::json_escape_unicode</a> (std::string &amp;res, const std::string &amp;str, std::string::const_iterator &amp;it)</td></tr>
+<tr class="memdesc:aab624da681aa9ab7e1c3bfb21eef873c"><td class="mdescLeft">&#160;</td><td class="mdescRight">内部函数，转义\u字符  <br /></td></tr>
+<tr class="separator:aab624da681aa9ab7e1c3bfb21eef873c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4ff25dfe2162f72bbafd0f55a55827c1" id="r_a4ff25dfe2162f72bbafd0f55a55827c1"><td class="memItemLeft" align="right" valign="top">static std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_jsonlib.html#a4ff25dfe2162f72bbafd0f55a55827c1">Jsonlib::json_escape_next</a> (const std::string &amp;str, std::string::const_iterator &amp;it)</td></tr>
+<tr class="memdesc:a4ff25dfe2162f72bbafd0f55a55827c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">内部函数，转义字符串且移动指针  <br /></td></tr>
+<tr class="separator:a4ff25dfe2162f72bbafd0f55a55827c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a954f91ceafdae87cb6eda64a113ac9f9" id="r_a954f91ceafdae87cb6eda64a113ac9f9"><td class="memItemLeft" align="right" valign="top">static std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_jsonlib.html#a954f91ceafdae87cb6eda64a113ac9f9">Jsonlib::json_reverse_escape</a> (const std::string &amp;str) noexcept</td></tr>
+<tr class="memdesc:a954f91ceafdae87cb6eda64a113ac9f9"><td class="mdescLeft">&#160;</td><td class="mdescRight">内部函数，反转义字符串  <br /></td></tr>
+<tr class="separator:a954f91ceafdae87cb6eda64a113ac9f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae1d2528d89c433d5244f5c2c2c998da9" id="r_ae1d2528d89c433d5244f5c2c2c998da9"><td class="memItemLeft" align="right" valign="top">static std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_jsonlib.html#ae1d2528d89c433d5244f5c2c2c998da9">Jsonlib::json_escape</a> (const std::string &amp;str)</td></tr>
+<tr class="memdesc:ae1d2528d89c433d5244f5c2c2c998da9"><td class="mdescLeft">&#160;</td><td class="mdescRight">内部函数，转义字符串  <br /></td></tr>
+<tr class="separator:ae1d2528d89c433d5244f5c2c2c998da9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2
+</small></address>
+</div><!-- doc-content -->
+</body>
+</html>
