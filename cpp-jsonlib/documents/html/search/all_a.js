@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['number_0',['NUMBER',['../namespace_json.html#af95719ed1a10f4696da3a722a4e344e4a34f55eca38e0605a84f169ff61a2a396',1,'Json']]]
+  ['type_0',['type',['../class_jsonlib_1_1_json_value.html#ad9972c3bc9065b7a9db2d4ddac1fae79',1,'Jsonlib::JsonValue']]]
 ];

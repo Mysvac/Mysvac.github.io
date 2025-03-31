@@ -1,0 +1,1339 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>cpp-jsonlib: Jsonlib::JsonValue类 参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">cpp-jsonlib<span id="projectnumber">&#160;2.0.0</span>
+   </div>
+   <div id="projectbrief">现代C++JSON解析库（C++17)</div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="搜索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){ initResizable(false); });
+/* @license-end */
+</script>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><b>Jsonlib</b></li><li class="navelem"><a class="el" href="class_jsonlib_1_1_json_value.html">JsonValue</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div id="doc-content">
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Public 成员函数</a> &#124;
+<a href="class_jsonlib_1_1_json_value-members.html">所有成员列表</a>  </div>
+  <div class="headertitle"><div class="title">Jsonlib::JsonValue类 参考</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Json数据通用类  
+ <a href="#details">更多...</a></p>
+
+<p><code>#include &lt;<a class="el" href="jsonlib_8h_source.html">jsonlib.h</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public 成员函数</h2></td></tr>
+<tr class="memitem:ad1f41301347a4a3d22a5cf8de0ecfbc6" id="r_ad1f41301347a4a3d22a5cf8de0ecfbc6"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad1f41301347a4a3d22a5cf8de0ecfbc6">JsonValue</a> (const std::string &amp;str, std::string::const_iterator &amp;it)</td></tr>
+<tr class="memdesc:ad1f41301347a4a3d22a5cf8de0ecfbc6"><td class="mdescLeft">&#160;</td><td class="mdescRight">从str的it位置开始解析  <br /></td></tr>
+<tr class="separator:ad1f41301347a4a3d22a5cf8de0ecfbc6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad9972c3bc9065b7a9db2d4ddac1fae79" id="r_ad9972c3bc9065b7a9db2d4ddac1fae79"><td class="memItemLeft" align="right" valign="top">JsonType&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad9972c3bc9065b7a9db2d4ddac1fae79">type</a> () const noexcept</td></tr>
+<tr class="memdesc:ad9972c3bc9065b7a9db2d4ddac1fae79"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取当前对象数据类型  <br /></td></tr>
+<tr class="separator:ad9972c3bc9065b7a9db2d4ddac1fae79"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a920fc29a14ad81aba9a5dff2bce603cd" id="r_a920fc29a14ad81aba9a5dff2bce603cd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a920fc29a14ad81aba9a5dff2bce603cd">reset</a> () noexcept</td></tr>
+<tr class="memdesc:a920fc29a14ad81aba9a5dff2bce603cd"><td class="mdescLeft">&#160;</td><td class="mdescRight">重置，设为null值  <br /></td></tr>
+<tr class="separator:a920fc29a14ad81aba9a5dff2bce603cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae694fa12388978f0fdc2bc980bd8cdd4" id="r_ae694fa12388978f0fdc2bc980bd8cdd4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae694fa12388978f0fdc2bc980bd8cdd4">clear</a> () noexcept</td></tr>
+<tr class="memdesc:ae694fa12388978f0fdc2bc980bd8cdd4"><td class="mdescLeft">&#160;</td><td class="mdescRight">按类型清除  <br /></td></tr>
+<tr class="separator:ae694fa12388978f0fdc2bc980bd8cdd4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1aa6aacf9593fb03a92ed0ff217c382a" id="r_a1aa6aacf9593fb03a92ed0ff217c382a"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1aa6aacf9593fb03a92ed0ff217c382a">size</a> () const noexcept</td></tr>
+<tr class="memdesc:a1aa6aacf9593fb03a92ed0ff217c382a"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取子元素数量  <br /></td></tr>
+<tr class="separator:a1aa6aacf9593fb03a92ed0ff217c382a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abfaf78926c8eebfce7ef5d35eec0c6a3" id="r_abfaf78926c8eebfce7ef5d35eec0c6a3"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abfaf78926c8eebfce7ef5d35eec0c6a3">JsonValue</a> ()=default</td></tr>
+<tr class="memdesc:abfaf78926c8eebfce7ef5d35eec0c6a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">默认构造函数  <br /></td></tr>
+<tr class="separator:abfaf78926c8eebfce7ef5d35eec0c6a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a73e457b83f56fb74bc48299cabf67ac0" id="r_a73e457b83f56fb74bc48299cabf67ac0"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a73e457b83f56fb74bc48299cabf67ac0">JsonValue</a> (const JsonType &amp;jsonType)</td></tr>
+<tr class="memdesc:a73e457b83f56fb74bc48299cabf67ac0"><td class="mdescLeft">&#160;</td><td class="mdescRight">指定类型的构造函数  <br /></td></tr>
+<tr class="separator:a73e457b83f56fb74bc48299cabf67ac0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6c7cd32c9ecf7562e262ae73b5438d03" id="r_a6c7cd32c9ecf7562e262ae73b5438d03"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6c7cd32c9ecf7562e262ae73b5438d03">JsonValue</a> (const std::string &amp;str)</td></tr>
+<tr class="memdesc:a6c7cd32c9ecf7562e262ae73b5438d03"><td class="mdescLeft">&#160;</td><td class="mdescRight">字符串构造函数  <br /></td></tr>
+<tr class="separator:a6c7cd32c9ecf7562e262ae73b5438d03"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0b7a2cd1d5613d3bf0f03b3f4368a2f3" id="r_a0b7a2cd1d5613d3bf0f03b3f4368a2f3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_jsonlib_1_1_json_value.html">JsonValue</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0b7a2cd1d5613d3bf0f03b3f4368a2f3">operator=</a> (const std::string &amp;str)</td></tr>
+<tr class="memdesc:a0b7a2cd1d5613d3bf0f03b3f4368a2f3"><td class="mdescLeft">&#160;</td><td class="mdescRight">字符串赋值函数  <br /></td></tr>
+<tr class="separator:a0b7a2cd1d5613d3bf0f03b3f4368a2f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad58293b85deddcb55e8563416e8d1fdd" id="r_ad58293b85deddcb55e8563416e8d1fdd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad58293b85deddcb55e8563416e8d1fdd">set_string</a> (const std::string &amp;str) noexcept</td></tr>
+<tr class="memdesc:ad58293b85deddcb55e8563416e8d1fdd"><td class="mdescLeft">&#160;</td><td class="mdescRight">字符串作为值类型直接解析  <br /></td></tr>
+<tr class="separator:ad58293b85deddcb55e8563416e8d1fdd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a306f9cda9adba1c8e5e61c565738e89e" id="r_a306f9cda9adba1c8e5e61c565738e89e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a306f9cda9adba1c8e5e61c565738e89e">JsonValue</a> (const char *str)</td></tr>
+<tr class="memdesc:a306f9cda9adba1c8e5e61c565738e89e"><td class="mdescLeft">&#160;</td><td class="mdescRight">字符串字面量构造函数  <br /></td></tr>
+<tr class="separator:a306f9cda9adba1c8e5e61c565738e89e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa42798b381d750032cdd49d2291d23cf" id="r_aa42798b381d750032cdd49d2291d23cf"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_jsonlib_1_1_json_value.html">JsonValue</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa42798b381d750032cdd49d2291d23cf">operator=</a> (const char *str)</td></tr>
+<tr class="memdesc:aa42798b381d750032cdd49d2291d23cf"><td class="mdescLeft">&#160;</td><td class="mdescRight">字符串字面量赋值函数  <br /></td></tr>
+<tr class="separator:aa42798b381d750032cdd49d2291d23cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa960701799c4ba73ef2958e709d88dab" id="r_aa960701799c4ba73ef2958e709d88dab"><td class="memItemLeft" align="right" valign="top"><a id="aa960701799c4ba73ef2958e709d88dab" name="aa960701799c4ba73ef2958e709d88dab"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>JsonValue</b> (const bool &amp;bl) noexcept</td></tr>
+<tr class="memdesc:aa960701799c4ba73ef2958e709d88dab"><td class="mdescLeft">&#160;</td><td class="mdescRight">布尔类型构造 <br /></td></tr>
+<tr class="separator:aa960701799c4ba73ef2958e709d88dab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a52cc5f8783afd6097c34929691f23080" id="r_a52cc5f8783afd6097c34929691f23080"><td class="memItemLeft" align="right" valign="top"><a id="a52cc5f8783afd6097c34929691f23080" name="a52cc5f8783afd6097c34929691f23080"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>JsonValue</b> (const int &amp;num) noexcept</td></tr>
+<tr class="memdesc:a52cc5f8783afd6097c34929691f23080"><td class="mdescLeft">&#160;</td><td class="mdescRight">整数类型构造 <br /></td></tr>
+<tr class="separator:a52cc5f8783afd6097c34929691f23080"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4f2fd7e2c618abbf9b917b3f2b72f4b8" id="r_a4f2fd7e2c618abbf9b917b3f2b72f4b8"><td class="memItemLeft" align="right" valign="top"><a id="a4f2fd7e2c618abbf9b917b3f2b72f4b8" name="a4f2fd7e2c618abbf9b917b3f2b72f4b8"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>JsonValue</b> (const long long &amp;num) noexcept</td></tr>
+<tr class="memdesc:a4f2fd7e2c618abbf9b917b3f2b72f4b8"><td class="mdescLeft">&#160;</td><td class="mdescRight">长整数类型构造 <br /></td></tr>
+<tr class="separator:a4f2fd7e2c618abbf9b917b3f2b72f4b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa94769b29a86361dd6369b0a8f5affc0" id="r_aa94769b29a86361dd6369b0a8f5affc0"><td class="memItemLeft" align="right" valign="top"><a id="aa94769b29a86361dd6369b0a8f5affc0" name="aa94769b29a86361dd6369b0a8f5affc0"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>JsonValue</b> (const double &amp;num) noexcept</td></tr>
+<tr class="memdesc:aa94769b29a86361dd6369b0a8f5affc0"><td class="mdescLeft">&#160;</td><td class="mdescRight">浮点数类型构造 <br /></td></tr>
+<tr class="separator:aa94769b29a86361dd6369b0a8f5affc0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a92c3d3db71f2365b3c3e452c0934b303" id="r_a92c3d3db71f2365b3c3e452c0934b303"><td class="memItemLeft" align="right" valign="top"><a id="a92c3d3db71f2365b3c3e452c0934b303" name="a92c3d3db71f2365b3c3e452c0934b303"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>JsonValue</b> (const long double &amp;num) noexcept</td></tr>
+<tr class="memdesc:a92c3d3db71f2365b3c3e452c0934b303"><td class="mdescLeft">&#160;</td><td class="mdescRight">浮点数类型构造 <br /></td></tr>
+<tr class="separator:a92c3d3db71f2365b3c3e452c0934b303"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0cd2c70f10a2b9bb9cbf4655a6f7c9c7" id="r_a0cd2c70f10a2b9bb9cbf4655a6f7c9c7"><td class="memItemLeft" align="right" valign="top"><a id="a0cd2c70f10a2b9bb9cbf4655a6f7c9c7" name="a0cd2c70f10a2b9bb9cbf4655a6f7c9c7"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>JsonValue</b> (const std::nullptr_t &amp;n_ptr) noexcept</td></tr>
+<tr class="memdesc:a0cd2c70f10a2b9bb9cbf4655a6f7c9c7"><td class="mdescLeft">&#160;</td><td class="mdescRight">nullptr_t类型构造 <br /></td></tr>
+<tr class="separator:a0cd2c70f10a2b9bb9cbf4655a6f7c9c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8205fd2c4c4771897898177eca7e1eae" id="r_a8205fd2c4c4771897898177eca7e1eae"><td class="memItemLeft" align="right" valign="top"><a id="a8205fd2c4c4771897898177eca7e1eae" name="a8205fd2c4c4771897898177eca7e1eae"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>JsonValue</b> (const JsonArray &amp;jsonArray) noexcept</td></tr>
+<tr class="memdesc:a8205fd2c4c4771897898177eca7e1eae"><td class="mdescLeft">&#160;</td><td class="mdescRight">JsonArray拷贝构造 <br /></td></tr>
+<tr class="separator:a8205fd2c4c4771897898177eca7e1eae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a590061fc5e8e87dbb623d8e12e143f83" id="r_a590061fc5e8e87dbb623d8e12e143f83"><td class="memItemLeft" align="right" valign="top"><a id="a590061fc5e8e87dbb623d8e12e143f83" name="a590061fc5e8e87dbb623d8e12e143f83"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>JsonValue</b> (JsonArray &amp;&amp;jsonArray) noexcept</td></tr>
+<tr class="memdesc:a590061fc5e8e87dbb623d8e12e143f83"><td class="mdescLeft">&#160;</td><td class="mdescRight">JsonArray移动构造 <br /></td></tr>
+<tr class="separator:a590061fc5e8e87dbb623d8e12e143f83"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3df85c82a6c8c4f0156eaa1a1ef18761" id="r_a3df85c82a6c8c4f0156eaa1a1ef18761"><td class="memItemLeft" align="right" valign="top"><a id="a3df85c82a6c8c4f0156eaa1a1ef18761" name="a3df85c82a6c8c4f0156eaa1a1ef18761"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>JsonValue</b> (const JsonObject &amp;jsonObject) noexcept</td></tr>
+<tr class="memdesc:a3df85c82a6c8c4f0156eaa1a1ef18761"><td class="mdescLeft">&#160;</td><td class="mdescRight">JsonObject拷贝构造 <br /></td></tr>
+<tr class="separator:a3df85c82a6c8c4f0156eaa1a1ef18761"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a83f78c9489d3087ecac1e8bfb5ea746d" id="r_a83f78c9489d3087ecac1e8bfb5ea746d"><td class="memItemLeft" align="right" valign="top"><a id="a83f78c9489d3087ecac1e8bfb5ea746d" name="a83f78c9489d3087ecac1e8bfb5ea746d"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>JsonValue</b> (JsonObject &amp;&amp;jsonObject) noexcept</td></tr>
+<tr class="memdesc:a83f78c9489d3087ecac1e8bfb5ea746d"><td class="mdescLeft">&#160;</td><td class="mdescRight">JsonObject移动构造 <br /></td></tr>
+<tr class="separator:a83f78c9489d3087ecac1e8bfb5ea746d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a49b7d85547458e9f3898f5d32b152b08" id="r_a49b7d85547458e9f3898f5d32b152b08"><td class="memItemLeft" align="right" valign="top"><a id="a49b7d85547458e9f3898f5d32b152b08" name="a49b7d85547458e9f3898f5d32b152b08"></a>
+<a class="el" href="class_jsonlib_1_1_json_value.html">JsonValue</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator=</b> (const JsonArray &amp;jsonArray) noexcept</td></tr>
+<tr class="memdesc:a49b7d85547458e9f3898f5d32b152b08"><td class="mdescLeft">&#160;</td><td class="mdescRight">JsonArray拷贝赋值 <br /></td></tr>
+<tr class="separator:a49b7d85547458e9f3898f5d32b152b08"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a723dc90023c0887ddb08e9d713f15e44" id="r_a723dc90023c0887ddb08e9d713f15e44"><td class="memItemLeft" align="right" valign="top"><a id="a723dc90023c0887ddb08e9d713f15e44" name="a723dc90023c0887ddb08e9d713f15e44"></a>
+<a class="el" href="class_jsonlib_1_1_json_value.html">JsonValue</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator=</b> (JsonArray &amp;&amp;jsonArray) noexcept</td></tr>
+<tr class="memdesc:a723dc90023c0887ddb08e9d713f15e44"><td class="mdescLeft">&#160;</td><td class="mdescRight">JsonArray移动赋值 <br /></td></tr>
+<tr class="separator:a723dc90023c0887ddb08e9d713f15e44"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad75be107ded9d3e6f3a0bd71aca8cc16" id="r_ad75be107ded9d3e6f3a0bd71aca8cc16"><td class="memItemLeft" align="right" valign="top"><a id="ad75be107ded9d3e6f3a0bd71aca8cc16" name="ad75be107ded9d3e6f3a0bd71aca8cc16"></a>
+<a class="el" href="class_jsonlib_1_1_json_value.html">JsonValue</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator=</b> (const JsonObject &amp;jsonObject) noexcept</td></tr>
+<tr class="memdesc:ad75be107ded9d3e6f3a0bd71aca8cc16"><td class="mdescLeft">&#160;</td><td class="mdescRight">JsonObject拷贝赋值 <br /></td></tr>
+<tr class="separator:ad75be107ded9d3e6f3a0bd71aca8cc16"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acd1954a7432cac42a0586c6fe0267139" id="r_acd1954a7432cac42a0586c6fe0267139"><td class="memItemLeft" align="right" valign="top"><a id="acd1954a7432cac42a0586c6fe0267139" name="acd1954a7432cac42a0586c6fe0267139"></a>
+<a class="el" href="class_jsonlib_1_1_json_value.html">JsonValue</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator=</b> (JsonObject &amp;&amp;jsonObject) noexcept</td></tr>
+<tr class="memdesc:acd1954a7432cac42a0586c6fe0267139"><td class="mdescLeft">&#160;</td><td class="mdescRight">JsonObject移动赋值 <br /></td></tr>
+<tr class="separator:acd1954a7432cac42a0586c6fe0267139"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2e48bdb128efeaeaadf542cd5672adae" id="r_a2e48bdb128efeaeaadf542cd5672adae"><td class="memItemLeft" align="right" valign="top"><a id="a2e48bdb128efeaeaadf542cd5672adae" name="a2e48bdb128efeaeaadf542cd5672adae"></a>
+<a class="el" href="class_jsonlib_1_1_json_value.html">JsonValue</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator=</b> (const bool &amp;bl) noexcept</td></tr>
+<tr class="memdesc:a2e48bdb128efeaeaadf542cd5672adae"><td class="mdescLeft">&#160;</td><td class="mdescRight">布尔类型赋值 <br /></td></tr>
+<tr class="separator:a2e48bdb128efeaeaadf542cd5672adae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa4a8a35fb1a726280ed0a90bedd57213" id="r_aa4a8a35fb1a726280ed0a90bedd57213"><td class="memItemLeft" align="right" valign="top"><a id="aa4a8a35fb1a726280ed0a90bedd57213" name="aa4a8a35fb1a726280ed0a90bedd57213"></a>
+<a class="el" href="class_jsonlib_1_1_json_value.html">JsonValue</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator=</b> (const int &amp;num) noexcept</td></tr>
+<tr class="memdesc:aa4a8a35fb1a726280ed0a90bedd57213"><td class="mdescLeft">&#160;</td><td class="mdescRight">整数类型赋值 <br /></td></tr>
+<tr class="separator:aa4a8a35fb1a726280ed0a90bedd57213"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac999e7bd9d83f78cce21d70d27630986" id="r_ac999e7bd9d83f78cce21d70d27630986"><td class="memItemLeft" align="right" valign="top"><a id="ac999e7bd9d83f78cce21d70d27630986" name="ac999e7bd9d83f78cce21d70d27630986"></a>
+<a class="el" href="class_jsonlib_1_1_json_value.html">JsonValue</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator=</b> (const long long &amp;num) noexcept</td></tr>
+<tr class="memdesc:ac999e7bd9d83f78cce21d70d27630986"><td class="mdescLeft">&#160;</td><td class="mdescRight">长整数类型赋值 <br /></td></tr>
+<tr class="separator:ac999e7bd9d83f78cce21d70d27630986"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aba19a0a046666a4d88f2f7a9e6d45b59" id="r_aba19a0a046666a4d88f2f7a9e6d45b59"><td class="memItemLeft" align="right" valign="top"><a id="aba19a0a046666a4d88f2f7a9e6d45b59" name="aba19a0a046666a4d88f2f7a9e6d45b59"></a>
+<a class="el" href="class_jsonlib_1_1_json_value.html">JsonValue</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator=</b> (const double &amp;num) noexcept</td></tr>
+<tr class="memdesc:aba19a0a046666a4d88f2f7a9e6d45b59"><td class="mdescLeft">&#160;</td><td class="mdescRight">浮点数类型赋值 <br /></td></tr>
+<tr class="separator:aba19a0a046666a4d88f2f7a9e6d45b59"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a56703d2bd5add7be40ab837418d80268" id="r_a56703d2bd5add7be40ab837418d80268"><td class="memItemLeft" align="right" valign="top"><a id="a56703d2bd5add7be40ab837418d80268" name="a56703d2bd5add7be40ab837418d80268"></a>
+<a class="el" href="class_jsonlib_1_1_json_value.html">JsonValue</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator=</b> (const long double &amp;num) noexcept</td></tr>
+<tr class="memdesc:a56703d2bd5add7be40ab837418d80268"><td class="mdescLeft">&#160;</td><td class="mdescRight">浮点数类型赋值 <br /></td></tr>
+<tr class="separator:a56703d2bd5add7be40ab837418d80268"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a482c4df5146c4251b6b9a46c1a4c4d49" id="r_a482c4df5146c4251b6b9a46c1a4c4d49"><td class="memItemLeft" align="right" valign="top"><a id="a482c4df5146c4251b6b9a46c1a4c4d49" name="a482c4df5146c4251b6b9a46c1a4c4d49"></a>
+<a class="el" href="class_jsonlib_1_1_json_value.html">JsonValue</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator=</b> (const std::nullptr_t &amp;n_ptr) noexcept</td></tr>
+<tr class="memdesc:a482c4df5146c4251b6b9a46c1a4c4d49"><td class="mdescLeft">&#160;</td><td class="mdescRight">null类型赋值 <br /></td></tr>
+<tr class="separator:a482c4df5146c4251b6b9a46c1a4c4d49"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac98317f906ca5ce112f8855dc25c99ad" id="r_ac98317f906ca5ce112f8855dc25c99ad"><td class="memItemLeft" align="right" valign="top"><a id="ac98317f906ca5ce112f8855dc25c99ad" name="ac98317f906ca5ce112f8855dc25c99ad"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>JsonValue</b> (const <a class="el" href="class_jsonlib_1_1_json_value.html">JsonValue</a> &amp;jsonValue) noexcept</td></tr>
+<tr class="memdesc:ac98317f906ca5ce112f8855dc25c99ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">拷贝构造 <br /></td></tr>
+<tr class="separator:ac98317f906ca5ce112f8855dc25c99ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aea7599d5523199f2c41acbe7366db727" id="r_aea7599d5523199f2c41acbe7366db727"><td class="memItemLeft" align="right" valign="top"><a id="aea7599d5523199f2c41acbe7366db727" name="aea7599d5523199f2c41acbe7366db727"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>JsonValue</b> (<a class="el" href="class_jsonlib_1_1_json_value.html">JsonValue</a> &amp;&amp;jsonValue) noexcept</td></tr>
+<tr class="memdesc:aea7599d5523199f2c41acbe7366db727"><td class="mdescLeft">&#160;</td><td class="mdescRight">移动构造 <br /></td></tr>
+<tr class="separator:aea7599d5523199f2c41acbe7366db727"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac66697cfdbe9da3f57bbd6777343c963" id="r_ac66697cfdbe9da3f57bbd6777343c963"><td class="memItemLeft" align="right" valign="top"><a id="ac66697cfdbe9da3f57bbd6777343c963" name="ac66697cfdbe9da3f57bbd6777343c963"></a>
+<a class="el" href="class_jsonlib_1_1_json_value.html">JsonValue</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator=</b> (const <a class="el" href="class_jsonlib_1_1_json_value.html">JsonValue</a> &amp;jsonValue) noexcept</td></tr>
+<tr class="memdesc:ac66697cfdbe9da3f57bbd6777343c963"><td class="mdescLeft">&#160;</td><td class="mdescRight">拷贝赋值 <br /></td></tr>
+<tr class="separator:ac66697cfdbe9da3f57bbd6777343c963"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2d78b1fb420b37a52396d0aeb116fdd8" id="r_a2d78b1fb420b37a52396d0aeb116fdd8"><td class="memItemLeft" align="right" valign="top"><a id="a2d78b1fb420b37a52396d0aeb116fdd8" name="a2d78b1fb420b37a52396d0aeb116fdd8"></a>
+<a class="el" href="class_jsonlib_1_1_json_value.html">JsonValue</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator=</b> (<a class="el" href="class_jsonlib_1_1_json_value.html">JsonValue</a> &amp;&amp;jsonValue) noexcept</td></tr>
+<tr class="memdesc:a2d78b1fb420b37a52396d0aeb116fdd8"><td class="mdescLeft">&#160;</td><td class="mdescRight">移动赋值 <br /></td></tr>
+<tr class="separator:a2d78b1fb420b37a52396d0aeb116fdd8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7dbfd35ff98c173399a49da7257f56ec" id="r_a7dbfd35ff98c173399a49da7257f56ec"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7dbfd35ff98c173399a49da7257f56ec">serialize</a> () const noexcept</td></tr>
+<tr class="memdesc:a7dbfd35ff98c173399a49da7257f56ec"><td class="mdescLeft">&#160;</td><td class="mdescRight">序列化对象  <br /></td></tr>
+<tr class="separator:a7dbfd35ff98c173399a49da7257f56ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9f576ccc1ab85bb8c4631f0da7c7d152" id="r_a9f576ccc1ab85bb8c4631f0da7c7d152"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9f576ccc1ab85bb8c4631f0da7c7d152">serialize_pretty</a> (const size_t &amp;space_num=2, const size_t &amp;depth=0) const noexcept</td></tr>
+<tr class="memdesc:a9f576ccc1ab85bb8c4631f0da7c7d152"><td class="mdescLeft">&#160;</td><td class="mdescRight">序列化对象且美化  <br /></td></tr>
+<tr class="separator:a9f576ccc1ab85bb8c4631f0da7c7d152"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a29fdc98c1d623e610d45ca059e04b81c" id="r_a29fdc98c1d623e610d45ca059e04b81c"><td class="memItemLeft" align="right" valign="top"><a id="a29fdc98c1d623e610d45ca059e04b81c" name="a29fdc98c1d623e610d45ca059e04b81c"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>is_object</b> () const noexcept</td></tr>
+<tr class="memdesc:a29fdc98c1d623e610d45ca059e04b81c"><td class="mdescLeft">&#160;</td><td class="mdescRight">判断是不是对象 <br /></td></tr>
+<tr class="separator:a29fdc98c1d623e610d45ca059e04b81c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a35fe61d8477e0697dcefd218893b12a7" id="r_a35fe61d8477e0697dcefd218893b12a7"><td class="memItemLeft" align="right" valign="top"><a id="a35fe61d8477e0697dcefd218893b12a7" name="a35fe61d8477e0697dcefd218893b12a7"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>is_array</b> () const noexcept</td></tr>
+<tr class="memdesc:a35fe61d8477e0697dcefd218893b12a7"><td class="mdescLeft">&#160;</td><td class="mdescRight">判断是不是数组 <br /></td></tr>
+<tr class="separator:a35fe61d8477e0697dcefd218893b12a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a44716b0878f2e6d45e51740786dfecec" id="r_a44716b0878f2e6d45e51740786dfecec"><td class="memItemLeft" align="right" valign="top"><a id="a44716b0878f2e6d45e51740786dfecec" name="a44716b0878f2e6d45e51740786dfecec"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>is_string</b> () const noexcept</td></tr>
+<tr class="memdesc:a44716b0878f2e6d45e51740786dfecec"><td class="mdescLeft">&#160;</td><td class="mdescRight">判断是不是字符串 <br /></td></tr>
+<tr class="separator:a44716b0878f2e6d45e51740786dfecec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a991c38772d9bebd496f172d512f124aa" id="r_a991c38772d9bebd496f172d512f124aa"><td class="memItemLeft" align="right" valign="top"><a id="a991c38772d9bebd496f172d512f124aa" name="a991c38772d9bebd496f172d512f124aa"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>is_bool</b> () const noexcept</td></tr>
+<tr class="memdesc:a991c38772d9bebd496f172d512f124aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">判断是不是布尔 <br /></td></tr>
+<tr class="separator:a991c38772d9bebd496f172d512f124aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa89bb183346c6350401867e2a6a2d226" id="r_aa89bb183346c6350401867e2a6a2d226"><td class="memItemLeft" align="right" valign="top"><a id="aa89bb183346c6350401867e2a6a2d226" name="aa89bb183346c6350401867e2a6a2d226"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>is_number</b> () const noexcept</td></tr>
+<tr class="memdesc:aa89bb183346c6350401867e2a6a2d226"><td class="mdescLeft">&#160;</td><td class="mdescRight">判断是不是数值 <br /></td></tr>
+<tr class="separator:aa89bb183346c6350401867e2a6a2d226"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab9a89f034e03234c0e9607c9f7d3a7c5" id="r_ab9a89f034e03234c0e9607c9f7d3a7c5"><td class="memItemLeft" align="right" valign="top"><a id="ab9a89f034e03234c0e9607c9f7d3a7c5" name="ab9a89f034e03234c0e9607c9f7d3a7c5"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>is_int64</b> () const noexcept</td></tr>
+<tr class="memdesc:ab9a89f034e03234c0e9607c9f7d3a7c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">判断是不是整数 <br /></td></tr>
+<tr class="separator:ab9a89f034e03234c0e9607c9f7d3a7c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae32d8c5515892671b9034450bce65031" id="r_ae32d8c5515892671b9034450bce65031"><td class="memItemLeft" align="right" valign="top"><a id="ae32d8c5515892671b9034450bce65031" name="ae32d8c5515892671b9034450bce65031"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>is_double</b> () const noexcept</td></tr>
+<tr class="memdesc:ae32d8c5515892671b9034450bce65031"><td class="mdescLeft">&#160;</td><td class="mdescRight">判断是不是浮点 <br /></td></tr>
+<tr class="separator:ae32d8c5515892671b9034450bce65031"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac5a6b601e20877e4f52e41ae5fe4ebba" id="r_ac5a6b601e20877e4f52e41ae5fe4ebba"><td class="memItemLeft" align="right" valign="top"><a id="ac5a6b601e20877e4f52e41ae5fe4ebba" name="ac5a6b601e20877e4f52e41ae5fe4ebba"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>is_null</b> () const noexcept</td></tr>
+<tr class="memdesc:ac5a6b601e20877e4f52e41ae5fe4ebba"><td class="mdescLeft">&#160;</td><td class="mdescRight">判断是不是null <br /></td></tr>
+<tr class="separator:ac5a6b601e20877e4f52e41ae5fe4ebba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7a44ee6b24d6219524006db8338d0139" id="r_a7a44ee6b24d6219524006db8338d0139"><td class="memItemLeft" align="right" valign="top"><a id="a7a44ee6b24d6219524006db8338d0139" name="a7a44ee6b24d6219524006db8338d0139"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>is_value</b> () const noexcept</td></tr>
+<tr class="memdesc:a7a44ee6b24d6219524006db8338d0139"><td class="mdescLeft">&#160;</td><td class="mdescRight">判断是不是值类型 <br /></td></tr>
+<tr class="separator:a7a44ee6b24d6219524006db8338d0139"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac7e5e9c2effb97903812b456c13ff737" id="r_ac7e5e9c2effb97903812b456c13ff737"><td class="memItemLeft" align="right" valign="top">long long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac7e5e9c2effb97903812b456c13ff737">as_int64</a> () const</td></tr>
+<tr class="memdesc:ac7e5e9c2effb97903812b456c13ff737"><td class="mdescLeft">&#160;</td><td class="mdescRight">转换成long long类型，复制一份  <br /></td></tr>
+<tr class="separator:ac7e5e9c2effb97903812b456c13ff737"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad6027c65c87b807f72f72b1756b27a5c" id="r_ad6027c65c87b807f72f72b1756b27a5c"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad6027c65c87b807f72f72b1756b27a5c">as_double</a> () const</td></tr>
+<tr class="memdesc:ad6027c65c87b807f72f72b1756b27a5c"><td class="mdescLeft">&#160;</td><td class="mdescRight">转换成double类型，复制一份  <br /></td></tr>
+<tr class="separator:ad6027c65c87b807f72f72b1756b27a5c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad50b26c50a8bf663420ef69c68bd8c4e" id="r_ad50b26c50a8bf663420ef69c68bd8c4e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad50b26c50a8bf663420ef69c68bd8c4e">as_bool</a> () const</td></tr>
+<tr class="memdesc:ad50b26c50a8bf663420ef69c68bd8c4e"><td class="mdescLeft">&#160;</td><td class="mdescRight">转换成bool类型，复制一份  <br /></td></tr>
+<tr class="separator:ad50b26c50a8bf663420ef69c68bd8c4e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a861f0efaae5f5fd00710a7058b729776" id="r_a861f0efaae5f5fd00710a7058b729776"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a861f0efaae5f5fd00710a7058b729776">as_string</a> () const</td></tr>
+<tr class="memdesc:a861f0efaae5f5fd00710a7058b729776"><td class="mdescLeft">&#160;</td><td class="mdescRight">转换成string类型，复制一份  <br /></td></tr>
+<tr class="separator:a861f0efaae5f5fd00710a7058b729776"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aebed01c2b25093734742222246dd2b95" id="r_aebed01c2b25093734742222246dd2b95"><td class="memItemLeft" align="right" valign="top">JsonObject &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aebed01c2b25093734742222246dd2b95">as_object</a> ()</td></tr>
+<tr class="memdesc:aebed01c2b25093734742222246dd2b95"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取内部Object对象的引用  <br /></td></tr>
+<tr class="separator:aebed01c2b25093734742222246dd2b95"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a310256c5586a19567048bedfc0cc4461" id="r_a310256c5586a19567048bedfc0cc4461"><td class="memItemLeft" align="right" valign="top">const JsonObject &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a310256c5586a19567048bedfc0cc4461">as_object</a> () const</td></tr>
+<tr class="memdesc:a310256c5586a19567048bedfc0cc4461"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取内部JsonObject对象的const引用  <br /></td></tr>
+<tr class="separator:a310256c5586a19567048bedfc0cc4461"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a22cc4fb0cd5ff6a1cca52048f3192115" id="r_a22cc4fb0cd5ff6a1cca52048f3192115"><td class="memItemLeft" align="right" valign="top">JsonArray &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a22cc4fb0cd5ff6a1cca52048f3192115">as_array</a> ()</td></tr>
+<tr class="memdesc:a22cc4fb0cd5ff6a1cca52048f3192115"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取内部Array对象的引用  <br /></td></tr>
+<tr class="separator:a22cc4fb0cd5ff6a1cca52048f3192115"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a892b9267e0e11a67951f331f5246ecbf" id="r_a892b9267e0e11a67951f331f5246ecbf"><td class="memItemLeft" align="right" valign="top">const JsonArray &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a892b9267e0e11a67951f331f5246ecbf">as_array</a> () const</td></tr>
+<tr class="memdesc:a892b9267e0e11a67951f331f5246ecbf"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取内部JsonArray对象的const引用  <br /></td></tr>
+<tr class="separator:a892b9267e0e11a67951f331f5246ecbf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad48a7c74e6cccf1d1bb01c97adcebea6" id="r_ad48a7c74e6cccf1d1bb01c97adcebea6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_jsonlib_1_1_json_value.html">JsonValue</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad48a7c74e6cccf1d1bb01c97adcebea6">at</a> (const size_t &amp;index)</td></tr>
+<tr class="memdesc:ad48a7c74e6cccf1d1bb01c97adcebea6"><td class="mdescLeft">&#160;</td><td class="mdescRight">at元素访问  <br /></td></tr>
+<tr class="separator:ad48a7c74e6cccf1d1bb01c97adcebea6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9dfd0ef0b4cc544888ea2efd2ed8d05c" id="r_a9dfd0ef0b4cc544888ea2efd2ed8d05c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_jsonlib_1_1_json_value.html">JsonValue</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9dfd0ef0b4cc544888ea2efd2ed8d05c">at</a> (const std::string &amp;key)</td></tr>
+<tr class="memdesc:a9dfd0ef0b4cc544888ea2efd2ed8d05c"><td class="mdescLeft">&#160;</td><td class="mdescRight">at元素访问  <br /></td></tr>
+<tr class="separator:a9dfd0ef0b4cc544888ea2efd2ed8d05c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a310b141754d39d1167a8c15243c9f2b5" id="r_a310b141754d39d1167a8c15243c9f2b5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_jsonlib_1_1_json_value.html">JsonValue</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a310b141754d39d1167a8c15243c9f2b5">operator[]</a> (const size_t &amp;index)</td></tr>
+<tr class="memdesc:a310b141754d39d1167a8c15243c9f2b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">[]元素访问  <br /></td></tr>
+<tr class="separator:a310b141754d39d1167a8c15243c9f2b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adf5ecf6a4cc0fd6858bcefad6d8ef815" id="r_adf5ecf6a4cc0fd6858bcefad6d8ef815"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_jsonlib_1_1_json_value.html">JsonValue</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adf5ecf6a4cc0fd6858bcefad6d8ef815">operator[]</a> (const std::string &amp;key)</td></tr>
+<tr class="memdesc:adf5ecf6a4cc0fd6858bcefad6d8ef815"><td class="mdescLeft">&#160;</td><td class="mdescRight">[]元素访问  <br /></td></tr>
+<tr class="separator:adf5ecf6a4cc0fd6858bcefad6d8ef815"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a42eef408567be0f2f01e115a2972417a" id="r_a42eef408567be0f2f01e115a2972417a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a42eef408567be0f2f01e115a2972417a">hasKey</a> (const std::string &amp;key) const</td></tr>
+<tr class="memdesc:a42eef408567be0f2f01e115a2972417a"><td class="mdescLeft">&#160;</td><td class="mdescRight">检查是否存在某个key  <br /></td></tr>
+<tr class="separator:a42eef408567be0f2f01e115a2972417a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaa24a36fb18f36ef43da9385d16a1f1c" id="r_aaa24a36fb18f36ef43da9385d16a1f1c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aaa24a36fb18f36ef43da9385d16a1f1c">push_back</a> (const <a class="el" href="class_jsonlib_1_1_json_value.html">JsonValue</a> &amp;jsonBasic)</td></tr>
+<tr class="memdesc:aaa24a36fb18f36ef43da9385d16a1f1c"><td class="mdescLeft">&#160;</td><td class="mdescRight">末尾插入元素  <br /></td></tr>
+<tr class="separator:aaa24a36fb18f36ef43da9385d16a1f1c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9b44890095e406a1409dfce62535ee3e" id="r_a9b44890095e406a1409dfce62535ee3e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9b44890095e406a1409dfce62535ee3e">push_back</a> (<a class="el" href="class_jsonlib_1_1_json_value.html">JsonValue</a> &amp;&amp;jsonBasic)</td></tr>
+<tr class="memdesc:a9b44890095e406a1409dfce62535ee3e"><td class="mdescLeft">&#160;</td><td class="mdescRight">末尾插入元素  <br /></td></tr>
+<tr class="separator:a9b44890095e406a1409dfce62535ee3e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8791ba5cc7dc01a64ae66a556a85f844" id="r_a8791ba5cc7dc01a64ae66a556a85f844"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8791ba5cc7dc01a64ae66a556a85f844">insert</a> (const size_t &amp;index, const <a class="el" href="class_jsonlib_1_1_json_value.html">JsonValue</a> &amp;jsonBasic)</td></tr>
+<tr class="memdesc:a8791ba5cc7dc01a64ae66a556a85f844"><td class="mdescLeft">&#160;</td><td class="mdescRight">在指定位置插入元素  <br /></td></tr>
+<tr class="separator:a8791ba5cc7dc01a64ae66a556a85f844"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af5794693ddddf4f6e4f78d8020416205" id="r_af5794693ddddf4f6e4f78d8020416205"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af5794693ddddf4f6e4f78d8020416205">insert</a> (const size_t &amp;index, <a class="el" href="class_jsonlib_1_1_json_value.html">JsonValue</a> &amp;&amp;jsonBasic)</td></tr>
+<tr class="memdesc:af5794693ddddf4f6e4f78d8020416205"><td class="mdescLeft">&#160;</td><td class="mdescRight">在指定位置移入元素  <br /></td></tr>
+<tr class="separator:af5794693ddddf4f6e4f78d8020416205"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa6bfb97ff25009158e316bb8b9a94517" id="r_aa6bfb97ff25009158e316bb8b9a94517"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa6bfb97ff25009158e316bb8b9a94517">insert</a> (const std::string &amp;key, const <a class="el" href="class_jsonlib_1_1_json_value.html">JsonValue</a> &amp;jsonBasic)</td></tr>
+<tr class="memdesc:aa6bfb97ff25009158e316bb8b9a94517"><td class="mdescLeft">&#160;</td><td class="mdescRight">插入键值对  <br /></td></tr>
+<tr class="separator:aa6bfb97ff25009158e316bb8b9a94517"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5e498c856e91c354d765e038576d5e74" id="r_a5e498c856e91c354d765e038576d5e74"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5e498c856e91c354d765e038576d5e74">insert</a> (const std::string &amp;key, <a class="el" href="class_jsonlib_1_1_json_value.html">JsonValue</a> &amp;&amp;jsonBasic)</td></tr>
+<tr class="memdesc:a5e498c856e91c354d765e038576d5e74"><td class="mdescLeft">&#160;</td><td class="mdescRight">移动插入键值对  <br /></td></tr>
+<tr class="separator:a5e498c856e91c354d765e038576d5e74"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0169396ad34f20498456fb5dde9d182f" id="r_a0169396ad34f20498456fb5dde9d182f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0169396ad34f20498456fb5dde9d182f">insert</a> (const std::pair&lt; const std::string, <a class="el" href="class_jsonlib_1_1_json_value.html">JsonValue</a> &gt; &amp;p)</td></tr>
+<tr class="memdesc:a0169396ad34f20498456fb5dde9d182f"><td class="mdescLeft">&#160;</td><td class="mdescRight">移动插入键值对  <br /></td></tr>
+<tr class="separator:a0169396ad34f20498456fb5dde9d182f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab2283a45a2db6d0a65f33d9b4d86b0d4" id="r_ab2283a45a2db6d0a65f33d9b4d86b0d4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab2283a45a2db6d0a65f33d9b4d86b0d4">erase</a> (const size_t &amp;index)</td></tr>
+<tr class="memdesc:ab2283a45a2db6d0a65f33d9b4d86b0d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">删除指定位置的元素  <br /></td></tr>
+<tr class="separator:ab2283a45a2db6d0a65f33d9b4d86b0d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa4ed79595ec103ade001136ae1a36ec2" id="r_aa4ed79595ec103ade001136ae1a36ec2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa4ed79595ec103ade001136ae1a36ec2">erase</a> (const std::string &amp;key)</td></tr>
+<tr class="memdesc:aa4ed79595ec103ade001136ae1a36ec2"><td class="mdescLeft">&#160;</td><td class="mdescRight">删除key的元素  <br /></td></tr>
+<tr class="separator:aa4ed79595ec103ade001136ae1a36ec2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><p>Json数据通用类 </p>
+<p>JSON反序列化后的，可操作对象。 </p><dl class="section note"><dt>注解</dt><dd>可以直接使用此类。 </dd></dl>
+</div><h2 class="groupheader">构造及析构函数说明</h2>
+<a id="ad1f41301347a4a3d22a5cf8de0ecfbc6" name="ad1f41301347a4a3d22a5cf8de0ecfbc6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad1f41301347a4a3d22a5cf8de0ecfbc6">&#9670;&#160;</a></span>JsonValue() <span class="overload">[1/5]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Jsonlib::JsonValue::JsonValue </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>str</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string::const_iterator &amp;</td>          <td class="paramname"><span class="paramname"><em>it</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>从str的it位置开始解析 </p>
+<dl class="section note"><dt>注解</dt><dd>私有，外部不可访问 </dd></dl>
+
+</div>
+</div>
+<a id="abfaf78926c8eebfce7ef5d35eec0c6a3" name="abfaf78926c8eebfce7ef5d35eec0c6a3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abfaf78926c8eebfce7ef5d35eec0c6a3">&#9670;&#160;</a></span>JsonValue() <span class="overload">[2/5]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Jsonlib::JsonValue::JsonValue </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel default">default</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>默认构造函数 </p>
+<p>默认构造，生成ISNULL类型的JSON数据。 </p>
+
+</div>
+</div>
+<a id="a73e457b83f56fb74bc48299cabf67ac0" name="a73e457b83f56fb74bc48299cabf67ac0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a73e457b83f56fb74bc48299cabf67ac0">&#9670;&#160;</a></span>JsonValue() <span class="overload">[3/5]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Jsonlib::JsonValue::JsonValue </td>
+          <td>(</td>
+          <td class="paramtype">const JsonType &amp;</td>          <td class="paramname"><span class="paramname"><em>jsonType</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>指定类型的构造函数 </p>
+<p>根据类型进行初始化。 </p>
+
+</div>
+</div>
+<a id="a6c7cd32c9ecf7562e262ae73b5438d03" name="a6c7cd32c9ecf7562e262ae73b5438d03"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6c7cd32c9ecf7562e262ae73b5438d03">&#9670;&#160;</a></span>JsonValue() <span class="overload">[4/5]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Jsonlib::JsonValue::JsonValue </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>str</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>字符串构造函数 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">str</td><td>JSON格式的文本数据。</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>将输入字符串反序列化，生成对象。 </p><dl class="exception"><dt>异常</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="class_jsonlib_1_1_json_structure_exception.html" title="Json结构错误异常类">JsonStructureException</a></td><td>JSON格式错误异常 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>注解</dt><dd>字符串将视作JSON数据进行解析，而非视作JsonType::STRING类型。 </dd></dl>
+
+</div>
+</div>
+<a id="a306f9cda9adba1c8e5e61c565738e89e" name="a306f9cda9adba1c8e5e61c565738e89e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a306f9cda9adba1c8e5e61c565738e89e">&#9670;&#160;</a></span>JsonValue() <span class="overload">[5/5]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Jsonlib::JsonValue::JsonValue </td>
+          <td>(</td>
+          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>str</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>字符串字面量构造函数 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">str</td><td>JSON格式的文本数据。</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>将输入字符串反序列化，生成对象。 </p><dl class="exception"><dt>异常</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="class_jsonlib_1_1_json_structure_exception.html" title="Json结构错误异常类">JsonStructureException</a></td><td>JSON格式错误异常 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>注解</dt><dd>字符串将视作JSON数据进行解析，而非视作JsonType::STRING类型。 </dd></dl>
+
+</div>
+</div>
+<h2 class="groupheader">成员函数说明</h2>
+<a id="a22cc4fb0cd5ff6a1cca52048f3192115" name="a22cc4fb0cd5ff6a1cca52048f3192115"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a22cc4fb0cd5ff6a1cca52048f3192115">&#9670;&#160;</a></span>as_array() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">JsonArray &amp; Jsonlib::JsonValue::as_array </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>获取内部Array对象的引用 </p>
+<p>获取内部Array对象的引用，可调用std::vector相关函数，非const，可修改 </p><dl class="exception"><dt>异常</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="class_jsonlib_1_1_json_type_exception.html" title="Json类型错误异常类">JsonTypeException</a></td><td>转换失败，类型错误 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>注解</dt><dd>类型必须是ARRAY </dd></dl>
+
+</div>
+</div>
+<a id="a892b9267e0e11a67951f331f5246ecbf" name="a892b9267e0e11a67951f331f5246ecbf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a892b9267e0e11a67951f331f5246ecbf">&#9670;&#160;</a></span>as_array() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const JsonArray &amp; Jsonlib::JsonValue::as_array </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>获取内部JsonArray对象的const引用 </p>
+<p>获取内部Array对象的引用，可调用std::vector相关函数，const，不可修改内容 </p><dl class="exception"><dt>异常</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="class_jsonlib_1_1_json_type_exception.html" title="Json类型错误异常类">JsonTypeException</a></td><td>转换失败，类型错误 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>注解</dt><dd>类型必须是ARRAY </dd></dl>
+
+</div>
+</div>
+<a id="ad50b26c50a8bf663420ef69c68bd8c4e" name="ad50b26c50a8bf663420ef69c68bd8c4e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad50b26c50a8bf663420ef69c68bd8c4e">&#9670;&#160;</a></span>as_bool()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Jsonlib::JsonValue::as_bool </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>转换成bool类型，复制一份 </p>
+<dl class="exception"><dt>异常</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="class_jsonlib_1_1_json_type_exception.html" title="Json类型错误异常类">JsonTypeException</a></td><td>转换失败，类型错误 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>注解</dt><dd>必须是BOOL </dd></dl>
+
+</div>
+</div>
+<a id="ad6027c65c87b807f72f72b1756b27a5c" name="ad6027c65c87b807f72f72b1756b27a5c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad6027c65c87b807f72f72b1756b27a5c">&#9670;&#160;</a></span>as_double()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double Jsonlib::JsonValue::as_double </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>转换成double类型，复制一份 </p>
+<dl class="exception"><dt>异常</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="class_jsonlib_1_1_json_type_exception.html" title="Json类型错误异常类">JsonTypeException</a></td><td>转换失败，类型错误 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>注解</dt><dd>必须是NUMBER </dd></dl>
+
+</div>
+</div>
+<a id="ac7e5e9c2effb97903812b456c13ff737" name="ac7e5e9c2effb97903812b456c13ff737"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac7e5e9c2effb97903812b456c13ff737">&#9670;&#160;</a></span>as_int64()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">long long Jsonlib::JsonValue::as_int64 </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>转换成long long类型，复制一份 </p>
+<dl class="exception"><dt>异常</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="class_jsonlib_1_1_json_type_exception.html" title="Json类型错误异常类">JsonTypeException</a></td><td>转换失败，类型错误 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>注解</dt><dd>必须是NUMBER </dd></dl>
+
+</div>
+</div>
+<a id="aebed01c2b25093734742222246dd2b95" name="aebed01c2b25093734742222246dd2b95"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aebed01c2b25093734742222246dd2b95">&#9670;&#160;</a></span>as_object() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">JsonObject &amp; Jsonlib::JsonValue::as_object </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>获取内部Object对象的引用 </p>
+<p>获取内部Object对象的引用，可调用std::map相关函数，非const，可修改 </p><dl class="exception"><dt>异常</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="class_jsonlib_1_1_json_type_exception.html" title="Json类型错误异常类">JsonTypeException</a></td><td>转换失败，类型错误 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>注解</dt><dd>类型必须是OBJECT </dd></dl>
+
+</div>
+</div>
+<a id="a310256c5586a19567048bedfc0cc4461" name="a310256c5586a19567048bedfc0cc4461"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a310256c5586a19567048bedfc0cc4461">&#9670;&#160;</a></span>as_object() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const JsonObject &amp; Jsonlib::JsonValue::as_object </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>获取内部JsonObject对象的const引用 </p>
+<p>获取内部Object对象的const引用，可调用std::map相关函数，const，不可修改内容 </p><dl class="exception"><dt>异常</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="class_jsonlib_1_1_json_type_exception.html" title="Json类型错误异常类">JsonTypeException</a></td><td>转换失败，类型错误 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>注解</dt><dd>类型必须是OBJECT </dd></dl>
+
+</div>
+</div>
+<a id="a861f0efaae5f5fd00710a7058b729776" name="a861f0efaae5f5fd00710a7058b729776"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a861f0efaae5f5fd00710a7058b729776">&#9670;&#160;</a></span>as_string()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string Jsonlib::JsonValue::as_string </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>转换成string类型，复制一份 </p>
+<dl class="exception"><dt>异常</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="class_jsonlib_1_1_json_type_exception.html" title="Json类型错误异常类">JsonTypeException</a></td><td>转换失败，类型错误 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>注解</dt><dd>必须是STRING </dd></dl>
+
+</div>
+</div>
+<a id="ad48a7c74e6cccf1d1bb01c97adcebea6" name="ad48a7c74e6cccf1d1bb01c97adcebea6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad48a7c74e6cccf1d1bb01c97adcebea6">&#9670;&#160;</a></span>at() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_jsonlib_1_1_json_value.html">JsonValue</a> &amp; Jsonlib::JsonValue::at </td>
+          <td>(</td>
+          <td class="paramtype">const size_t &amp;</td>          <td class="paramname"><span class="paramname"><em>index</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>at元素访问 </p>
+<p>at访问，带越界检查，必须是ARRAY类型 </p><dl class="exception"><dt>异常</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="class_jsonlib_1_1_json_type_exception.html" title="Json类型错误异常类">JsonTypeException</a></td><td>类型错误异常 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>注解</dt><dd>不会创建新元素 </dd></dl>
+
+</div>
+</div>
+<a id="a9dfd0ef0b4cc544888ea2efd2ed8d05c" name="a9dfd0ef0b4cc544888ea2efd2ed8d05c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9dfd0ef0b4cc544888ea2efd2ed8d05c">&#9670;&#160;</a></span>at() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_jsonlib_1_1_json_value.html">JsonValue</a> &amp; Jsonlib::JsonValue::at </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>key</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>at元素访问 </p>
+<p>at访问，带越界检查，必须是OBJECT类型 </p><dl class="exception"><dt>异常</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="class_jsonlib_1_1_json_type_exception.html" title="Json类型错误异常类">JsonTypeException</a></td><td>类型错误异常 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>注解</dt><dd>不会创建新元素 </dd></dl>
+
+</div>
+</div>
+<a id="ae694fa12388978f0fdc2bc980bd8cdd4" name="ae694fa12388978f0fdc2bc980bd8cdd4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae694fa12388978f0fdc2bc980bd8cdd4">&#9670;&#160;</a></span>clear()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Jsonlib::JsonValue::clear </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel noexcept">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>按类型清除 </p>
+<p>对象变为空字典 数组变空数组 数值变0 布尔变false 字符串变空串 </p><dl class="section note"><dt>注解</dt><dd>不会调用其他函数 </dd></dl>
+
+</div>
+</div>
+<a id="ab2283a45a2db6d0a65f33d9b4d86b0d4" name="ab2283a45a2db6d0a65f33d9b4d86b0d4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab2283a45a2db6d0a65f33d9b4d86b0d4">&#9670;&#160;</a></span>erase() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Jsonlib::JsonValue::erase </td>
+          <td>(</td>
+          <td class="paramtype">const size_t &amp;</td>          <td class="paramname"><span class="paramname"><em>index</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>删除指定位置的元素 </p>
+<dl class="section note"><dt>注解</dt><dd>必须是ARRAY类型 </dd></dl>
+
+</div>
+</div>
+<a id="aa4ed79595ec103ade001136ae1a36ec2" name="aa4ed79595ec103ade001136ae1a36ec2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa4ed79595ec103ade001136ae1a36ec2">&#9670;&#160;</a></span>erase() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Jsonlib::JsonValue::erase </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>key</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>删除key的元素 </p>
+<dl class="section note"><dt>注解</dt><dd>必须是OBJECT类型 </dd></dl>
+
+</div>
+</div>
+<a id="a42eef408567be0f2f01e115a2972417a" name="a42eef408567be0f2f01e115a2972417a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a42eef408567be0f2f01e115a2972417a">&#9670;&#160;</a></span>hasKey()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Jsonlib::JsonValue::hasKey </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>key</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>检查是否存在某个key </p>
+<dl class="exception"><dt>异常</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="class_jsonlib_1_1_json_type_exception.html" title="Json类型错误异常类">JsonTypeException</a></td><td>非对象类型抛出异常 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>注解</dt><dd>必须是OBJECT类型 </dd></dl>
+
+</div>
+</div>
+<a id="a8791ba5cc7dc01a64ae66a556a85f844" name="a8791ba5cc7dc01a64ae66a556a85f844"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8791ba5cc7dc01a64ae66a556a85f844">&#9670;&#160;</a></span>insert() <span class="overload">[1/5]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Jsonlib::JsonValue::insert </td>
+          <td>(</td>
+          <td class="paramtype">const size_t &amp;</td>          <td class="paramname"><span class="paramname"><em>index</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="class_jsonlib_1_1_json_value.html">JsonValue</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>jsonBasic</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>在指定位置插入元素 </p>
+<dl class="section note"><dt>注解</dt><dd>必须是ARRAY类型 </dd></dl>
+
+</div>
+</div>
+<a id="af5794693ddddf4f6e4f78d8020416205" name="af5794693ddddf4f6e4f78d8020416205"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af5794693ddddf4f6e4f78d8020416205">&#9670;&#160;</a></span>insert() <span class="overload">[2/5]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Jsonlib::JsonValue::insert </td>
+          <td>(</td>
+          <td class="paramtype">const size_t &amp;</td>          <td class="paramname"><span class="paramname"><em>index</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_jsonlib_1_1_json_value.html">JsonValue</a> &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em>jsonBasic</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>在指定位置移入元素 </p>
+<dl class="section note"><dt>注解</dt><dd>必须是ARRAY类型 </dd></dl>
+
+</div>
+</div>
+<a id="a0169396ad34f20498456fb5dde9d182f" name="a0169396ad34f20498456fb5dde9d182f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0169396ad34f20498456fb5dde9d182f">&#9670;&#160;</a></span>insert() <span class="overload">[3/5]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Jsonlib::JsonValue::insert </td>
+          <td>(</td>
+          <td class="paramtype">const std::pair&lt; const std::string, <a class="el" href="class_jsonlib_1_1_json_value.html">JsonValue</a> &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>p</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>移动插入键值对 </p>
+<dl class="section note"><dt>注解</dt><dd>必须是Object类型 </dd></dl>
+
+</div>
+</div>
+<a id="aa6bfb97ff25009158e316bb8b9a94517" name="aa6bfb97ff25009158e316bb8b9a94517"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa6bfb97ff25009158e316bb8b9a94517">&#9670;&#160;</a></span>insert() <span class="overload">[4/5]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Jsonlib::JsonValue::insert </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>key</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="class_jsonlib_1_1_json_value.html">JsonValue</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>jsonBasic</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>插入键值对 </p>
+<dl class="section note"><dt>注解</dt><dd>必须是Object类型 </dd></dl>
+
+</div>
+</div>
+<a id="a5e498c856e91c354d765e038576d5e74" name="a5e498c856e91c354d765e038576d5e74"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5e498c856e91c354d765e038576d5e74">&#9670;&#160;</a></span>insert() <span class="overload">[5/5]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Jsonlib::JsonValue::insert </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>key</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_jsonlib_1_1_json_value.html">JsonValue</a> &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em>jsonBasic</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>移动插入键值对 </p>
+<dl class="section note"><dt>注解</dt><dd>必须是Object类型 </dd></dl>
+
+</div>
+</div>
+<a id="aa42798b381d750032cdd49d2291d23cf" name="aa42798b381d750032cdd49d2291d23cf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa42798b381d750032cdd49d2291d23cf">&#9670;&#160;</a></span>operator=() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_jsonlib_1_1_json_value.html">JsonValue</a> &amp; Jsonlib::JsonValue::operator= </td>
+          <td>(</td>
+          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>str</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>字符串字面量赋值函数 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">str</td><td>JSON格式的文本数据。</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>将输入字符串反序列化，生成对象。 </p><dl class="exception"><dt>异常</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="class_jsonlib_1_1_json_structure_exception.html" title="Json结构错误异常类">JsonStructureException</a></td><td>JSON格式错误异常 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>注解</dt><dd>字符串将视作JSON数据进行解析，而非视作JsonType::STRING类型。 </dd></dl>
+
+</div>
+</div>
+<a id="a0b7a2cd1d5613d3bf0f03b3f4368a2f3" name="a0b7a2cd1d5613d3bf0f03b3f4368a2f3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0b7a2cd1d5613d3bf0f03b3f4368a2f3">&#9670;&#160;</a></span>operator=() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_jsonlib_1_1_json_value.html">JsonValue</a> &amp; Jsonlib::JsonValue::operator= </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>str</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>字符串赋值函数 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">str</td><td>JSON格式的文本数据</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>将输入字符串反序列化，生成对象。 </p><dl class="exception"><dt>异常</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="class_jsonlib_1_1_json_structure_exception.html" title="Json结构错误异常类">JsonStructureException</a></td><td>JSON格式错误异常 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>注解</dt><dd>字符串将视作JSON数据进行解析，而非视作JsonType::STRING类型。 </dd></dl>
+
+</div>
+</div>
+<a id="a310b141754d39d1167a8c15243c9f2b5" name="a310b141754d39d1167a8c15243c9f2b5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a310b141754d39d1167a8c15243c9f2b5">&#9670;&#160;</a></span>operator[]() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_jsonlib_1_1_json_value.html">JsonValue</a> &amp; Jsonlib::JsonValue::operator[] </td>
+          <td>(</td>
+          <td class="paramtype">const size_t &amp;</td>          <td class="paramname"><span class="paramname"><em>index</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>[]元素访问 </p>
+<p>[]访问，带越界检查，必须是ARRAY类型 </p><dl class="exception"><dt>异常</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="class_jsonlib_1_1_json_type_exception.html" title="Json类型错误异常类">JsonTypeException</a></td><td>类型错误异常 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>注解</dt><dd>如果指向末尾，会创建新元素， </dd></dl>
+
+</div>
+</div>
+<a id="adf5ecf6a4cc0fd6858bcefad6d8ef815" name="adf5ecf6a4cc0fd6858bcefad6d8ef815"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adf5ecf6a4cc0fd6858bcefad6d8ef815">&#9670;&#160;</a></span>operator[]() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_jsonlib_1_1_json_value.html">JsonValue</a> &amp; Jsonlib::JsonValue::operator[] </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>key</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>[]元素访问 </p>
+<p>[]访问，带越界检查，必须是OBJECT类型 </p><dl class="exception"><dt>异常</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="class_jsonlib_1_1_json_type_exception.html" title="Json类型错误异常类">JsonTypeException</a></td><td>类型错误异常 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>注解</dt><dd>如果key不存在，会创建新元素，所以可以直接赋值。 </dd></dl>
+
+</div>
+</div>
+<a id="aaa24a36fb18f36ef43da9385d16a1f1c" name="aaa24a36fb18f36ef43da9385d16a1f1c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaa24a36fb18f36ef43da9385d16a1f1c">&#9670;&#160;</a></span>push_back() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Jsonlib::JsonValue::push_back </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_jsonlib_1_1_json_value.html">JsonValue</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>jsonBasic</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>末尾插入元素 </p>
+<dl class="exception"><dt>异常</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="class_jsonlib_1_1_json_type_exception.html" title="Json类型错误异常类">JsonTypeException</a></td><td>非数组类型抛出异常 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>注解</dt><dd>必须是ARRAY类型 </dd></dl>
+
+</div>
+</div>
+<a id="a9b44890095e406a1409dfce62535ee3e" name="a9b44890095e406a1409dfce62535ee3e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9b44890095e406a1409dfce62535ee3e">&#9670;&#160;</a></span>push_back() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Jsonlib::JsonValue::push_back </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_jsonlib_1_1_json_value.html">JsonValue</a> &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em>jsonBasic</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>末尾插入元素 </p>
+<dl class="section note"><dt>注解</dt><dd>必须是ARRAY类型 </dd></dl>
+
+</div>
+</div>
+<a id="a920fc29a14ad81aba9a5dff2bce603cd" name="a920fc29a14ad81aba9a5dff2bce603cd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a920fc29a14ad81aba9a5dff2bce603cd">&#9670;&#160;</a></span>reset()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Jsonlib::JsonValue::reset </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>重置，设为null值 </p>
+<dl class="section note"><dt>注解</dt><dd>不会调用其他函数 </dd></dl>
+
+</div>
+</div>
+<a id="a7dbfd35ff98c173399a49da7257f56ec" name="a7dbfd35ff98c173399a49da7257f56ec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7dbfd35ff98c173399a49da7257f56ec">&#9670;&#160;</a></span>serialize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string Jsonlib::JsonValue::serialize </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel noexcept">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>序列化对象 </p>
+<p>将对象序列化，生成JSON结构的字符串，去除无效空白字符。 </p><dl class="section return"><dt>返回</dt><dd>std::string&amp;类型，当前对象内部字符串值的应用。 </dd></dl>
+<dl class="section note"><dt>注解</dt><dd>注意，序列化包含反转义，注意区分使用。 </dd></dl>
+
+</div>
+</div>
+<a id="a9f576ccc1ab85bb8c4631f0da7c7d152" name="a9f576ccc1ab85bb8c4631f0da7c7d152"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9f576ccc1ab85bb8c4631f0da7c7d152">&#9670;&#160;</a></span>serialize_pretty()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string Jsonlib::JsonValue::serialize_pretty </td>
+          <td>(</td>
+          <td class="paramtype">const size_t &amp;</td>          <td class="paramname"><span class="paramname"><em>space_num</em></span><span class="paramdefsep"> = </span><span class="paramdefval">2</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const size_t &amp;</td>          <td class="paramname"><span class="paramname"><em>depth</em></span><span class="paramdefsep"> = </span><span class="paramdefval">0</span>&#160;) const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel noexcept">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>序列化对象且美化 </p>
+<p>对象序列化，生成JSON结构的字符串，自动生成换行和空格缩进。 </p><dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">space_num</td><td>每次缩进使用的空格数量 默认 2 </td></tr>
+    <tr><td class="paramname">depth</td><td>当前对象缩进次数，默认 0 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>注解</dt><dd>注意，序列化包含反转义，注意区分使用。 </dd></dl>
+
+</div>
+</div>
+<a id="ad58293b85deddcb55e8563416e8d1fdd" name="ad58293b85deddcb55e8563416e8d1fdd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad58293b85deddcb55e8563416e8d1fdd">&#9670;&#160;</a></span>set_string()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Jsonlib::JsonValue::set_string </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>str</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel noexcept">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>字符串作为值类型直接解析 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">str</td><td>需要转义的字符串 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>注解</dt><dd>字符串将视作值进行解析，而非视为JSON数据 </dd></dl>
+
+</div>
+</div>
+<a id="a1aa6aacf9593fb03a92ed0ff217c382a" name="a1aa6aacf9593fb03a92ed0ff217c382a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1aa6aacf9593fb03a92ed0ff217c382a">&#9670;&#160;</a></span>size()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t Jsonlib::JsonValue::size </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel noexcept">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>获取子元素数量 </p>
+<p>对象和列表返回子元素个数，字符串返回长度。 </p><dl class="section note"><dt>注解</dt><dd>数值，布尔和null 返回值待定为1 </dd></dl>
+
+</div>
+</div>
+<a id="ad9972c3bc9065b7a9db2d4ddac1fae79" name="ad9972c3bc9065b7a9db2d4ddac1fae79"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad9972c3bc9065b7a9db2d4ddac1fae79">&#9670;&#160;</a></span>type()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">JsonType Jsonlib::JsonValue::type </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>获取当前对象数据类型 </p>
+<dl class="section return"><dt>返回</dt><dd>Json::JsonType类型，表示当前对象数据类型 </dd></dl>
+
+</div>
+</div>
+<hr/>该类的文档由以下文件生成:<ul>
+<li>F:/cpp-jsonlib/include/<a class="el" href="jsonlib_8h_source.html">jsonlib.h</a></li>
+<li>F:/cpp-jsonlib/src/<b>jsonlib.cpp</b></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2
+</small></address>
+</div><!-- doc-content -->
+</body>
+</html>
