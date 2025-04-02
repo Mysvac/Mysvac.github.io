@@ -9,8 +9,18 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(function() { init_search(); });
+/* @license-end */
+</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -20,16 +30,33 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">cpp-jsonlib<span id="projectnumber">&#160;2.0.0</span>
+   <div id="projectname">cpp-jsonlib<span id="projectnumber">&#160;3.0.0</span>
    </div>
-   <div id="projectbrief">现代C++JSON解析库（C++17)</div>
+   <div id="projectbrief">C++17 JSON解析库</div>
   </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="搜索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
  </tr>
  </tbody>
 </table>
 </div>
 <!-- end header part -->
 <!-- 制作者 Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
 $(function() { codefold.init(0); });
@@ -42,6 +69,27 @@ $(function() { codefold.init(0); });
 $(function(){ initResizable(false); });
 /* @license-end */
 </script>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
 <div class="contents">
 <div class="textblock">这里列出了所有类成员，并附带类的详细说明:</div>
 
@@ -68,7 +116,7 @@ $(function(){ initResizable(false); });
 
 
 <h3><a id="index_h" name="index_h"></a>- h -</h3><ul>
-<li>hasKey()&#160;:&#160;<a class="el" href="class_jsonlib_1_1_json_value.html#a42eef408567be0f2f01e115a2972417a">Jsonlib::JsonValue</a></li>
+<li>hasKey()&#160;:&#160;<a class="el" href="class_jsonlib_1_1_json_value.html#af7a81e30cb841d74e52843e5ec6429d6">Jsonlib::JsonValue</a></li>
 </ul>
 
 
@@ -114,7 +162,6 @@ $(function(){ initResizable(false); });
 <h3><a id="index_s" name="index_s"></a>- s -</h3><ul>
 <li>serialize()&#160;:&#160;<a class="el" href="class_jsonlib_1_1_json_value.html#a7dbfd35ff98c173399a49da7257f56ec">Jsonlib::JsonValue</a></li>
 <li>serialize_pretty()&#160;:&#160;<a class="el" href="class_jsonlib_1_1_json_value.html#a9f576ccc1ab85bb8c4631f0da7c7d152">Jsonlib::JsonValue</a></li>
-<li>set_string()&#160;:&#160;<a class="el" href="class_jsonlib_1_1_json_value.html#ad58293b85deddcb55e8563416e8d1fdd">Jsonlib::JsonValue</a></li>
 <li>size()&#160;:&#160;<a class="el" href="class_jsonlib_1_1_json_value.html#a1aa6aacf9593fb03a92ed0ff217c382a">Jsonlib::JsonValue</a></li>
 </ul>
 
