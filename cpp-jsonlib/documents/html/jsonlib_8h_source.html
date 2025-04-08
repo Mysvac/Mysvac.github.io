@@ -9,8 +9,20 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(function() { init_search(); });
+/* @license-end */
+</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -20,10 +32,22 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">mysvac-jsonlib<span id="projectnumber">&#160;1.0.0</span>
+   <div id="projectname">mysvac-jsonlib<span id="projectnumber">&#160;2.0.0</span>
    </div>
-   <div id="projectbrief">C++17轻量级JSON解析库</div>
+   <div id="projectbrief">一个轻量高效的C++17 JSON解析库</div>
   </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="搜索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
  </tr>
  </tbody>
 </table>
@@ -32,20 +56,52 @@
 <!-- 制作者 Doxygen 1.13.2 -->
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(function() { codefold.init(0); });
+var searchBox = new SearchBox("searchBox", "search/",'.html');
 /* @license-end */
 </script>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(function(){ initResizable(false); });
+$(function() { codefold.init(0); });
 /* @license-end */
 </script>
-<div id="nav-path" class="navpath">
-  <ul>
-<li class="navelem"><a class="el" href="dir_b7ac11114fbc4dd3226dd1c951458c5e.html">cpp-jsonlib</a></li><li class="navelem"><a class="el" href="dir_f2f2a70042cd1e7f728d819556198981.html">include</a></li>  </ul>
-</div>
 </div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('jsonlib_8h_source.html',''); initResizable(true); });
+/* @license-end */
+</script>
 <div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
 <div class="header">
   <div class="headertitle"><div class="title">jsonlib.h</div></div>
 </div><!--header-->
@@ -55,8 +111,8 @@ $(function(){ initResizable(false); });
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno"><a class="line" href="jsonlib_8h.html#a58b95f25461d30bff34c7e86260346d7">    3</a></span><span class="preprocessor">#define MYSVAC_CPP_JSONLIB_H</span></div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span> </div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;string&gt;</span></div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;map&gt;</span></div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &lt;set&gt;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;string_view&gt;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &lt;map&gt;</span></div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &lt;variant&gt;</span></div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &lt;exception&gt;</span></div>
@@ -69,16 +125,14 @@ $(function(){ initResizable(false); });
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
 <div class="foldopen" id="foldopen00018" data-start="{" data-end="}">
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="namespace_jsonlib.html">   18</a></span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespace_jsonlib.html">Jsonlib</a>{</div>
-<div class="foldopen" id="foldopen00023" data-start="{" data-end="};">
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="namespace_jsonlib.html#a66702acb68ce0862104dbfbdc9160ff3">   23</a></span>    <span class="keyword">enum class</span> <a class="code hl_enumeration" href="namespace_jsonlib.html#a66702acb68ce0862104dbfbdc9160ff3">JsonType</a>{</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="namespace_jsonlib.html#a66702acb68ce0862104dbfbdc9160ff3a8eee8e217391199668cbac89472ace53">   24</a></span>        <a class="code hl_enumvalue" href="namespace_jsonlib.html#a66702acb68ce0862104dbfbdc9160ff3a8eee8e217391199668cbac89472ace53">OBJECT</a>, </div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="namespace_jsonlib.html#a66702acb68ce0862104dbfbdc9160ff3acb4fb1757fb37c43cded35d3eb857c43">   25</a></span>        <a class="code hl_enumvalue" href="namespace_jsonlib.html#a66702acb68ce0862104dbfbdc9160ff3acb4fb1757fb37c43cded35d3eb857c43">ARRAY</a>,</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno"><a class="line" href="namespace_jsonlib.html#a66702acb68ce0862104dbfbdc9160ff3a63b588d5559f64f89a416e656880b949">   26</a></span>        <a class="code hl_enumvalue" href="namespace_jsonlib.html#a66702acb68ce0862104dbfbdc9160ff3a63b588d5559f64f89a416e656880b949">STRING</a>, </div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno"><a class="line" href="namespace_jsonlib.html#a66702acb68ce0862104dbfbdc9160ff3a34f55eca38e0605a84f169ff61a2a396">   27</a></span>        <a class="code hl_enumvalue" href="namespace_jsonlib.html#a66702acb68ce0862104dbfbdc9160ff3a34f55eca38e0605a84f169ff61a2a396">NUMBER</a>, </div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="namespace_jsonlib.html#a66702acb68ce0862104dbfbdc9160ff3a8871649efb5cc3e8ba5f59e5956f9f86">   28</a></span>        <a class="code hl_enumvalue" href="namespace_jsonlib.html#a66702acb68ce0862104dbfbdc9160ff3a8871649efb5cc3e8ba5f59e5956f9f86">BOOLEN</a>, </div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno"><a class="line" href="namespace_jsonlib.html#a66702acb68ce0862104dbfbdc9160ff3ac5dc611cb8490048db201f0710f4b379">   29</a></span>        <a class="code hl_enumvalue" href="namespace_jsonlib.html#a66702acb68ce0862104dbfbdc9160ff3ac5dc611cb8490048db201f0710f4b379">ISNULL</a>, </div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    <span class="keyword">enum class</span> <a class="code hl_define" href="jsonlib_8h.html#aac95152663bf6f53c741daf26e620394">JSONLIB_EXPORT</a> JsonType{</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="jsonlib_8h.html#a5e8ede2d8e9bbd40b3389b5188eeed9f">   24</a></span>        <a class="code hl_variable" href="jsonlib_8h.html#a5e8ede2d8e9bbd40b3389b5188eeed9f">OBJECT</a>, </div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="jsonlib_8h.html#a1f9b51f648372a425785eae89c6df432">   25</a></span>        <a class="code hl_variable" href="jsonlib_8h.html#a1f9b51f648372a425785eae89c6df432">ARRAY</a>,</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno"><a class="line" href="jsonlib_8h.html#ae158940723622f094459a31491a87336">   26</a></span>        <a class="code hl_variable" href="jsonlib_8h.html#ae158940723622f094459a31491a87336">STRING</a>, </div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno"><a class="line" href="jsonlib_8h.html#a0f231179dc45b24642bf36011f211d26">   27</a></span>        <a class="code hl_variable" href="jsonlib_8h.html#a0f231179dc45b24642bf36011f211d26">NUMBER</a>, </div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="jsonlib_8h.html#a3e5b8192e7d9ffaf3542f1210aec18dd">   28</a></span>        <a class="code hl_variable" href="jsonlib_8h.html#a3e5b8192e7d9ffaf3542f1210aec18dd">BOOL</a>, </div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno"><a class="line" href="jsonlib_8h.html#ad73ff29f818073afb75c8561001d9d5a">   29</a></span>        <a class="code hl_variable" href="jsonlib_8h.html#ad73ff29f818073afb75c8561001d9d5a">ISNULL</a>, </div>
 <div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    };</div>
-</div>
 <div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
 <div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span></div>
 <div class="foldopen" id="foldopen00039" data-start="{" data-end="};">
@@ -116,25 +170,25 @@ $(function(){ initResizable(false); });
 <div class="line"><a id="l00101" name="l00101"></a><span class="lineno"><a class="line" href="namespace_jsonlib.html#a6b94d7e44358a1995b822724b5364a2c">  101</a></span>    <span class="keyword">using </span><a class="code hl_typedef" href="namespace_jsonlib.html#a6b94d7e44358a1995b822724b5364a2c">JsonArray</a> = std::vector&lt;JsonValue&gt;;</div>
 <div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span></div>
 <div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>    <a class="code hl_define" href="jsonlib_8h.html#aac95152663bf6f53c741daf26e620394">JSONLIB_EXPORT</a></div>
-<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>    <a class="code hl_class" href="class_jsonlib_1_1_json_value.html">JsonValue</a> <a class="code hl_function" href="namespace_jsonlib.html#afe22f0ed46489bd498922b7ac7ea2b3c">deserialize</a>(<span class="keyword">const</span> std::string&amp; str);</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>    <a class="code hl_class" href="class_jsonlib_1_1_json_value.html">JsonValue</a> <a class="code hl_function" href="namespace_jsonlib.html#ad5751b7c51b6bac764d08e78242b5330">deserialize</a>(std::string_view str);</div>
 <div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span></div>
 <div class="foldopen" id="foldopen00117" data-start="{" data-end="};">
-<div class="line"><a id="l00117" name="l00117"></a><span class="lineno"><a class="line" href="class_jsonlib_1_1_json_value.html">  117</a></span>    <span class="keyword">class </span><a class="code hl_define" href="jsonlib_8h.html#aac95152663bf6f53c741daf26e620394">JSONLIB_EXPORT</a> <a class="code hl_function" href="class_jsonlib_1_1_json_value.html#ad1f41301347a4a3d22a5cf8de0ecfbc6">JsonValue</a>{</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno"><a class="line" href="class_jsonlib_1_1_json_value.html">  117</a></span>    <span class="keyword">class </span><a class="code hl_define" href="jsonlib_8h.html#aac95152663bf6f53c741daf26e620394">JSONLIB_EXPORT</a> <a class="code hl_function" href="class_jsonlib_1_1_json_value.html#a7997e67f09202214b560d117a5cb7fd9">JsonValue</a>{</div>
 <div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>    <span class="keyword">private</span>:</div>
 <div class="line"><a id="l00119" name="l00119"></a><span class="lineno"><a class="line" href="class_jsonlib_1_1_json_value.html#abfd6888e4552e9e54a25645574056059">  119</a></span>        <span class="keyword">using </span><a class="code hl_typedef" href="class_jsonlib_1_1_json_value.html#abfd6888e4552e9e54a25645574056059">JsonVar</a> = std::variant&lt;bool, std::string, JsonObject, JsonArray&gt;;</div>
 <div class="line"><a id="l00125" name="l00125"></a><span class="lineno"><a class="line" href="class_jsonlib_1_1_json_value.html#a5ef65219727e5c23099c3f8cb2f03091">  125</a></span>        <a class="code hl_typedef" href="class_jsonlib_1_1_json_value.html#abfd6888e4552e9e54a25645574056059">JsonVar</a> <a class="code hl_variable" href="class_jsonlib_1_1_json_value.html#a5ef65219727e5c23099c3f8cb2f03091">content_</a> { <span class="keyword">false</span> };</div>
 <div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span></div>
-<div class="line"><a id="l00130" name="l00130"></a><span class="lineno"><a class="line" href="class_jsonlib_1_1_json_value.html#a647e42b6833ee493c409f97ff22ae520">  130</a></span>        <a class="code hl_enumeration" href="namespace_jsonlib.html#a66702acb68ce0862104dbfbdc9160ff3">JsonType</a> <a class="code hl_variable" href="class_jsonlib_1_1_json_value.html#a647e42b6833ee493c409f97ff22ae520">type_</a> { <a class="code hl_enumvalue" href="namespace_jsonlib.html#a66702acb68ce0862104dbfbdc9160ff3ac5dc611cb8490048db201f0710f4b379">JsonType::ISNULL</a> };</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno"><a class="line" href="class_jsonlib_1_1_json_value.html#a647e42b6833ee493c409f97ff22ae520">  130</a></span>        JsonType <a class="code hl_variable" href="class_jsonlib_1_1_json_value.html#a647e42b6833ee493c409f97ff22ae520">type_</a> { JsonType::ISNULL };</div>
 <div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span> </div>
 <div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>    <span class="keyword">public</span>:</div>
-<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>        <a class="code hl_class" href="class_jsonlib_1_1_json_value.html">JsonValue</a>(<span class="keyword">const</span> std::string&amp; str, std::string::const_iterator&amp; it);</div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>        <a class="code hl_class" href="class_jsonlib_1_1_json_value.html">JsonValue</a>(std::string_view str, std::string_view::const_iterator&amp; it);</div>
 <div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span> </div>
 <div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span></div>
-<div class="line"><a id="l00145" name="l00145"></a><span class="lineno"><a class="line" href="class_jsonlib_1_1_json_value.html#ad9972c3bc9065b7a9db2d4ddac1fae79">  145</a></span>        <span class="keyword">inline</span> <a class="code hl_enumeration" href="namespace_jsonlib.html#a66702acb68ce0862104dbfbdc9160ff3">JsonType</a> <a class="code hl_function" href="class_jsonlib_1_1_json_value.html#ad9972c3bc9065b7a9db2d4ddac1fae79">type</a>() const noexcept { <span class="keywordflow">return</span> <a class="code hl_variable" href="class_jsonlib_1_1_json_value.html#a647e42b6833ee493c409f97ff22ae520">type_</a>; }</div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno"><a class="line" href="class_jsonlib_1_1_json_value.html#ad9972c3bc9065b7a9db2d4ddac1fae79">  145</a></span>        <span class="keyword">inline</span> JsonType <a class="code hl_function" href="class_jsonlib_1_1_json_value.html#ad9972c3bc9065b7a9db2d4ddac1fae79">type</a>() const noexcept { <span class="keywordflow">return</span> <a class="code hl_variable" href="class_jsonlib_1_1_json_value.html#a647e42b6833ee493c409f97ff22ae520">type_</a>; }</div>
 <div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span></div>
 <div class="foldopen" id="foldopen00151" data-start="{" data-end="}">
 <div class="line"><a id="l00151" name="l00151"></a><span class="lineno"><a class="line" href="class_jsonlib_1_1_json_value.html#a920fc29a14ad81aba9a5dff2bce603cd">  151</a></span>        <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_jsonlib_1_1_json_value.html#a920fc29a14ad81aba9a5dff2bce603cd">reset</a>() noexcept {</div>
-<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>            <a class="code hl_variable" href="class_jsonlib_1_1_json_value.html#a647e42b6833ee493c409f97ff22ae520">type_</a> = <a class="code hl_enumvalue" href="namespace_jsonlib.html#a66702acb68ce0862104dbfbdc9160ff3ac5dc611cb8490048db201f0710f4b379">JsonType::ISNULL</a>;</div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>            <a class="code hl_variable" href="class_jsonlib_1_1_json_value.html#a647e42b6833ee493c409f97ff22ae520">type_</a> = JsonType::ISNULL;</div>
 <div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>            <a class="code hl_variable" href="class_jsonlib_1_1_json_value.html#a5ef65219727e5c23099c3f8cb2f03091">content_</a> = <span class="keyword">false</span>;</div>
 <div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>        }</div>
 </div>
@@ -143,45 +197,45 @@ $(function(){ initResizable(false); });
 <div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span></div>
 <div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>        <span class="keywordtype">size_t</span> size() const noexcept;</div>
 <div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span></div>
-<div class="line"><a id="l00174" name="l00174"></a><span class="lineno"><a class="line" href="class_jsonlib_1_1_json_value.html#abfaf78926c8eebfce7ef5d35eec0c6a3">  174</a></span>        <a class="code hl_function" href="class_jsonlib_1_1_json_value.html#ad1f41301347a4a3d22a5cf8de0ecfbc6">JsonValue</a>() = default;</div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno"><a class="line" href="class_jsonlib_1_1_json_value.html#abfaf78926c8eebfce7ef5d35eec0c6a3">  174</a></span>        <a class="code hl_function" href="class_jsonlib_1_1_json_value.html#a7997e67f09202214b560d117a5cb7fd9">JsonValue</a>() = default;</div>
 <div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span></div>
-<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span>        <a class="code hl_function" href="class_jsonlib_1_1_json_value.html#ad1f41301347a4a3d22a5cf8de0ecfbc6">JsonValue</a>(const <a class="code hl_enumeration" href="namespace_jsonlib.html#a66702acb68ce0862104dbfbdc9160ff3">JsonType</a>&amp; jsonType);</div>
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span>        <a class="code hl_function" href="class_jsonlib_1_1_json_value.html#a7997e67f09202214b560d117a5cb7fd9">JsonValue</a>(const JsonType&amp; jsonType);</div>
 <div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span></div>
-<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span>        <a class="code hl_function" href="class_jsonlib_1_1_json_value.html#ad1f41301347a4a3d22a5cf8de0ecfbc6">JsonValue</a>(const std::<span class="keywordtype">string</span>&amp; str) noexcept;</div>
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span>        <a class="code hl_function" href="class_jsonlib_1_1_json_value.html#a7997e67f09202214b560d117a5cb7fd9">JsonValue</a>(std::string_view str) noexcept;</div>
 <div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span></div>
-<div class="line"><a id="l00196" name="l00196"></a><span class="lineno"><a class="line" href="class_jsonlib_1_1_json_value.html#a0b7a2cd1d5613d3bf0f03b3f4368a2f3">  196</a></span>        <a class="code hl_function" href="class_jsonlib_1_1_json_value.html#ad1f41301347a4a3d22a5cf8de0ecfbc6">JsonValue</a>&amp; operator=(const std::<span class="keywordtype">string</span>&amp; str);</div>
+<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span>        <a class="code hl_function" href="class_jsonlib_1_1_json_value.html#a7997e67f09202214b560d117a5cb7fd9">JsonValue</a>&amp; operator=(std::string_view str);</div>
 <div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span> </div>
 <div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span></div>
-<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span>        <a class="code hl_function" href="class_jsonlib_1_1_json_value.html#ad1f41301347a4a3d22a5cf8de0ecfbc6">JsonValue</a>(const <span class="keywordtype">char</span>* str) noexcept;</div>
+<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span>        <a class="code hl_function" href="class_jsonlib_1_1_json_value.html#a7997e67f09202214b560d117a5cb7fd9">JsonValue</a>(const <span class="keywordtype">char</span>* str) noexcept;</div>
 <div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span></div>
-<div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span>        <a class="code hl_function" href="class_jsonlib_1_1_json_value.html#ad1f41301347a4a3d22a5cf8de0ecfbc6">JsonValue</a>&amp; operator=(const <span class="keywordtype">char</span>* str) noexcept;</div>
+<div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span>        <a class="code hl_function" href="class_jsonlib_1_1_json_value.html#a7997e67f09202214b560d117a5cb7fd9">JsonValue</a>&amp; operator=(const <span class="keywordtype">char</span>* str) noexcept;</div>
 <div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span>        </div>
 <div class="foldopen" id="foldopen00218" data-start="{" data-end="}">
-<div class="line"><a id="l00218" name="l00218"></a><span class="lineno"><a class="line" href="class_jsonlib_1_1_json_value.html#aa960701799c4ba73ef2958e709d88dab">  218</a></span>        inline <a class="code hl_function" href="class_jsonlib_1_1_json_value.html#ad1f41301347a4a3d22a5cf8de0ecfbc6">JsonValue</a>(const <span class="keywordtype">bool</span>&amp; bl) noexcept: <a class="code hl_variable" href="class_jsonlib_1_1_json_value.html#a647e42b6833ee493c409f97ff22ae520">type_</a>(<a class="code hl_enumeration" href="namespace_jsonlib.html#a66702acb68ce0862104dbfbdc9160ff3">JsonType</a>::<a class="code hl_enumvalue" href="namespace_jsonlib.html#a66702acb68ce0862104dbfbdc9160ff3a8871649efb5cc3e8ba5f59e5956f9f86">BOOLEN</a>) {</div>
+<div class="line"><a id="l00218" name="l00218"></a><span class="lineno"><a class="line" href="class_jsonlib_1_1_json_value.html#aa960701799c4ba73ef2958e709d88dab">  218</a></span>        inline <a class="code hl_function" href="class_jsonlib_1_1_json_value.html#a7997e67f09202214b560d117a5cb7fd9">JsonValue</a>(const <span class="keywordtype">bool</span>&amp; bl) noexcept: <a class="code hl_variable" href="class_jsonlib_1_1_json_value.html#a647e42b6833ee493c409f97ff22ae520">type_</a>(JsonType::<a class="code hl_variable" href="jsonlib_8h.html#a3e5b8192e7d9ffaf3542f1210aec18dd">BOOL</a>) {</div>
 <div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span>            <a class="code hl_variable" href="class_jsonlib_1_1_json_value.html#a5ef65219727e5c23099c3f8cb2f03091">content_</a> = bl;</div>
 <div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span>        }</div>
 </div>
 <div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span></div>
 <div class="foldopen" id="foldopen00224" data-start="{" data-end="}">
-<div class="line"><a id="l00224" name="l00224"></a><span class="lineno"><a class="line" href="class_jsonlib_1_1_json_value.html#a52cc5f8783afd6097c34929691f23080">  224</a></span>        <span class="keyword">inline</span> <a class="code hl_function" href="class_jsonlib_1_1_json_value.html#a52cc5f8783afd6097c34929691f23080">JsonValue</a>(<span class="keyword">const</span> <span class="keywordtype">int</span>&amp; num) <span class="keyword">noexcept</span>: <a class="code hl_variable" href="class_jsonlib_1_1_json_value.html#a647e42b6833ee493c409f97ff22ae520">type_</a>(<a class="code hl_enumvalue" href="namespace_jsonlib.html#a66702acb68ce0862104dbfbdc9160ff3a34f55eca38e0605a84f169ff61a2a396">JsonType::NUMBER</a>) {</div>
+<div class="line"><a id="l00224" name="l00224"></a><span class="lineno"><a class="line" href="class_jsonlib_1_1_json_value.html#a52cc5f8783afd6097c34929691f23080">  224</a></span>        <span class="keyword">inline</span> <a class="code hl_function" href="class_jsonlib_1_1_json_value.html#a52cc5f8783afd6097c34929691f23080">JsonValue</a>(<span class="keyword">const</span> <span class="keywordtype">int</span>&amp; num) <span class="keyword">noexcept</span>: <a class="code hl_variable" href="class_jsonlib_1_1_json_value.html#a647e42b6833ee493c409f97ff22ae520">type_</a>(JsonType::NUMBER) {</div>
 <div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span>            <a class="code hl_variable" href="class_jsonlib_1_1_json_value.html#a5ef65219727e5c23099c3f8cb2f03091">content_</a> = std::to_string(num);</div>
 <div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span>        }</div>
 </div>
 <div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span></div>
 <div class="foldopen" id="foldopen00230" data-start="{" data-end="}">
-<div class="line"><a id="l00230" name="l00230"></a><span class="lineno"><a class="line" href="class_jsonlib_1_1_json_value.html#a4f2fd7e2c618abbf9b917b3f2b72f4b8">  230</a></span>        <span class="keyword">inline</span> <a class="code hl_function" href="class_jsonlib_1_1_json_value.html#a4f2fd7e2c618abbf9b917b3f2b72f4b8">JsonValue</a>(<span class="keyword">const</span> <span class="keywordtype">long</span> <span class="keywordtype">long</span>&amp; num) <span class="keyword">noexcept</span>: <a class="code hl_variable" href="class_jsonlib_1_1_json_value.html#a647e42b6833ee493c409f97ff22ae520">type_</a>(<a class="code hl_enumvalue" href="namespace_jsonlib.html#a66702acb68ce0862104dbfbdc9160ff3a34f55eca38e0605a84f169ff61a2a396">JsonType::NUMBER</a>) {</div>
+<div class="line"><a id="l00230" name="l00230"></a><span class="lineno"><a class="line" href="class_jsonlib_1_1_json_value.html#a4f2fd7e2c618abbf9b917b3f2b72f4b8">  230</a></span>        <span class="keyword">inline</span> <a class="code hl_function" href="class_jsonlib_1_1_json_value.html#a4f2fd7e2c618abbf9b917b3f2b72f4b8">JsonValue</a>(<span class="keyword">const</span> <span class="keywordtype">long</span> <span class="keywordtype">long</span>&amp; num) <span class="keyword">noexcept</span>: <a class="code hl_variable" href="class_jsonlib_1_1_json_value.html#a647e42b6833ee493c409f97ff22ae520">type_</a>(JsonType::NUMBER) {</div>
 <div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span>            <a class="code hl_variable" href="class_jsonlib_1_1_json_value.html#a5ef65219727e5c23099c3f8cb2f03091">content_</a> = std::to_string(num);</div>
 <div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span>        }</div>
 </div>
 <div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span></div>
 <div class="foldopen" id="foldopen00236" data-start="{" data-end="}">
-<div class="line"><a id="l00236" name="l00236"></a><span class="lineno"><a class="line" href="class_jsonlib_1_1_json_value.html#aa94769b29a86361dd6369b0a8f5affc0">  236</a></span>        <span class="keyword">inline</span> <a class="code hl_function" href="class_jsonlib_1_1_json_value.html#aa94769b29a86361dd6369b0a8f5affc0">JsonValue</a>(<span class="keyword">const</span> <span class="keywordtype">double</span>&amp; num) <span class="keyword">noexcept</span>: <a class="code hl_variable" href="class_jsonlib_1_1_json_value.html#a647e42b6833ee493c409f97ff22ae520">type_</a>(<a class="code hl_enumvalue" href="namespace_jsonlib.html#a66702acb68ce0862104dbfbdc9160ff3a34f55eca38e0605a84f169ff61a2a396">JsonType::NUMBER</a>) {</div>
+<div class="line"><a id="l00236" name="l00236"></a><span class="lineno"><a class="line" href="class_jsonlib_1_1_json_value.html#aa94769b29a86361dd6369b0a8f5affc0">  236</a></span>        <span class="keyword">inline</span> <a class="code hl_function" href="class_jsonlib_1_1_json_value.html#aa94769b29a86361dd6369b0a8f5affc0">JsonValue</a>(<span class="keyword">const</span> <span class="keywordtype">double</span>&amp; num) <span class="keyword">noexcept</span>: <a class="code hl_variable" href="class_jsonlib_1_1_json_value.html#a647e42b6833ee493c409f97ff22ae520">type_</a>(JsonType::NUMBER) {</div>
 <div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span>            <a class="code hl_variable" href="class_jsonlib_1_1_json_value.html#a5ef65219727e5c23099c3f8cb2f03091">content_</a> = std::to_string(num);</div>
 <div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span>        }</div>
 </div>
 <div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span></div>
 <div class="foldopen" id="foldopen00242" data-start="{" data-end="}">
-<div class="line"><a id="l00242" name="l00242"></a><span class="lineno"><a class="line" href="class_jsonlib_1_1_json_value.html#a92c3d3db71f2365b3c3e452c0934b303">  242</a></span>        <span class="keyword">inline</span> <a class="code hl_function" href="class_jsonlib_1_1_json_value.html#a92c3d3db71f2365b3c3e452c0934b303">JsonValue</a>(<span class="keyword">const</span> <span class="keywordtype">long</span> <span class="keywordtype">double</span>&amp; num) <span class="keyword">noexcept</span>: <a class="code hl_variable" href="class_jsonlib_1_1_json_value.html#a647e42b6833ee493c409f97ff22ae520">type_</a>(<a class="code hl_enumvalue" href="namespace_jsonlib.html#a66702acb68ce0862104dbfbdc9160ff3a34f55eca38e0605a84f169ff61a2a396">JsonType::NUMBER</a>) {</div>
+<div class="line"><a id="l00242" name="l00242"></a><span class="lineno"><a class="line" href="class_jsonlib_1_1_json_value.html#a92c3d3db71f2365b3c3e452c0934b303">  242</a></span>        <span class="keyword">inline</span> <a class="code hl_function" href="class_jsonlib_1_1_json_value.html#a92c3d3db71f2365b3c3e452c0934b303">JsonValue</a>(<span class="keyword">const</span> <span class="keywordtype">long</span> <span class="keywordtype">double</span>&amp; num) <span class="keyword">noexcept</span>: <a class="code hl_variable" href="class_jsonlib_1_1_json_value.html#a647e42b6833ee493c409f97ff22ae520">type_</a>(JsonType::NUMBER) {</div>
 <div class="line"><a id="l00243" name="l00243"></a><span class="lineno">  243</span>            <a class="code hl_variable" href="class_jsonlib_1_1_json_value.html#a5ef65219727e5c23099c3f8cb2f03091">content_</a> = std::to_string(num);</div>
 <div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span>        }</div>
 </div>
@@ -199,48 +253,48 @@ $(function(){ initResizable(false); });
 <div class="line"><a id="l00282" name="l00282"></a><span class="lineno">  282</span>        <a class="code hl_class" href="class_jsonlib_1_1_json_value.html">JsonValue</a>&amp; operator=(<a class="code hl_typedef" href="namespace_jsonlib.html#a5401b730c48ae0be6c94f2aed129164e">JsonObject</a>&amp;&amp; jsonObject) <span class="keyword">noexcept</span>;</div>
 <div class="line"><a id="l00283" name="l00283"></a><span class="lineno">  283</span></div>
 <div class="foldopen" id="foldopen00287" data-start="{" data-end="}">
-<div class="line"><a id="l00287" name="l00287"></a><span class="lineno"><a class="line" href="class_jsonlib_1_1_json_value.html#a2e48bdb128efeaeaadf542cd5672adae">  287</a></span>        <span class="keyword">inline</span> <a class="code hl_function" href="class_jsonlib_1_1_json_value.html#ad1f41301347a4a3d22a5cf8de0ecfbc6">JsonValue</a>&amp; <a class="code hl_function" href="class_jsonlib_1_1_json_value.html#a2e48bdb128efeaeaadf542cd5672adae">operator=</a>(<span class="keyword">const</span> <span class="keywordtype">bool</span>&amp; bl) <span class="keyword">noexcept</span> { </div>
-<div class="line"><a id="l00288" name="l00288"></a><span class="lineno">  288</span>            <a class="code hl_variable" href="class_jsonlib_1_1_json_value.html#a647e42b6833ee493c409f97ff22ae520">type_</a> = <a class="code hl_enumvalue" href="namespace_jsonlib.html#a66702acb68ce0862104dbfbdc9160ff3a8871649efb5cc3e8ba5f59e5956f9f86">JsonType::BOOLEN</a>;</div>
+<div class="line"><a id="l00287" name="l00287"></a><span class="lineno"><a class="line" href="class_jsonlib_1_1_json_value.html#a2e48bdb128efeaeaadf542cd5672adae">  287</a></span>        <span class="keyword">inline</span> <a class="code hl_function" href="class_jsonlib_1_1_json_value.html#a7997e67f09202214b560d117a5cb7fd9">JsonValue</a>&amp; <a class="code hl_function" href="class_jsonlib_1_1_json_value.html#a2e48bdb128efeaeaadf542cd5672adae">operator=</a>(<span class="keyword">const</span> <span class="keywordtype">bool</span>&amp; bl) <span class="keyword">noexcept</span> { </div>
+<div class="line"><a id="l00288" name="l00288"></a><span class="lineno">  288</span>            <a class="code hl_variable" href="class_jsonlib_1_1_json_value.html#a647e42b6833ee493c409f97ff22ae520">type_</a> = JsonType::BOOL;</div>
 <div class="line"><a id="l00289" name="l00289"></a><span class="lineno">  289</span>            <a class="code hl_variable" href="class_jsonlib_1_1_json_value.html#a5ef65219727e5c23099c3f8cb2f03091">content_</a> = bl;</div>
 <div class="line"><a id="l00290" name="l00290"></a><span class="lineno">  290</span>            <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
 <div class="line"><a id="l00291" name="l00291"></a><span class="lineno">  291</span>        }</div>
 </div>
 <div class="line"><a id="l00292" name="l00292"></a><span class="lineno">  292</span></div>
 <div class="foldopen" id="foldopen00295" data-start="{" data-end="}">
-<div class="line"><a id="l00295" name="l00295"></a><span class="lineno"><a class="line" href="class_jsonlib_1_1_json_value.html#aa4a8a35fb1a726280ed0a90bedd57213">  295</a></span>        <span class="keyword">inline</span> <a class="code hl_function" href="class_jsonlib_1_1_json_value.html#ad1f41301347a4a3d22a5cf8de0ecfbc6">JsonValue</a>&amp; <a class="code hl_function" href="class_jsonlib_1_1_json_value.html#aa4a8a35fb1a726280ed0a90bedd57213">operator=</a>(<span class="keyword">const</span> <span class="keywordtype">int</span>&amp; num) <span class="keyword">noexcept</span> {</div>
-<div class="line"><a id="l00296" name="l00296"></a><span class="lineno">  296</span>            <a class="code hl_variable" href="class_jsonlib_1_1_json_value.html#a647e42b6833ee493c409f97ff22ae520">type_</a> = <a class="code hl_enumvalue" href="namespace_jsonlib.html#a66702acb68ce0862104dbfbdc9160ff3a34f55eca38e0605a84f169ff61a2a396">JsonType::NUMBER</a>;</div>
+<div class="line"><a id="l00295" name="l00295"></a><span class="lineno"><a class="line" href="class_jsonlib_1_1_json_value.html#aa4a8a35fb1a726280ed0a90bedd57213">  295</a></span>        <span class="keyword">inline</span> <a class="code hl_function" href="class_jsonlib_1_1_json_value.html#a7997e67f09202214b560d117a5cb7fd9">JsonValue</a>&amp; <a class="code hl_function" href="class_jsonlib_1_1_json_value.html#aa4a8a35fb1a726280ed0a90bedd57213">operator=</a>(<span class="keyword">const</span> <span class="keywordtype">int</span>&amp; num) <span class="keyword">noexcept</span> {</div>
+<div class="line"><a id="l00296" name="l00296"></a><span class="lineno">  296</span>            <a class="code hl_variable" href="class_jsonlib_1_1_json_value.html#a647e42b6833ee493c409f97ff22ae520">type_</a> = JsonType::NUMBER;</div>
 <div class="line"><a id="l00297" name="l00297"></a><span class="lineno">  297</span>            <a class="code hl_variable" href="class_jsonlib_1_1_json_value.html#a5ef65219727e5c23099c3f8cb2f03091">content_</a> = std::to_string(num);</div>
 <div class="line"><a id="l00298" name="l00298"></a><span class="lineno">  298</span>            <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
 <div class="line"><a id="l00299" name="l00299"></a><span class="lineno">  299</span>        }</div>
 </div>
 <div class="line"><a id="l00300" name="l00300"></a><span class="lineno">  300</span></div>
 <div class="foldopen" id="foldopen00303" data-start="{" data-end="}">
-<div class="line"><a id="l00303" name="l00303"></a><span class="lineno"><a class="line" href="class_jsonlib_1_1_json_value.html#ac999e7bd9d83f78cce21d70d27630986">  303</a></span>        <span class="keyword">inline</span> <a class="code hl_function" href="class_jsonlib_1_1_json_value.html#ad1f41301347a4a3d22a5cf8de0ecfbc6">JsonValue</a>&amp; <a class="code hl_function" href="class_jsonlib_1_1_json_value.html#ac999e7bd9d83f78cce21d70d27630986">operator=</a>(<span class="keyword">const</span> <span class="keywordtype">long</span> <span class="keywordtype">long</span>&amp; num) <span class="keyword">noexcept</span>{</div>
-<div class="line"><a id="l00304" name="l00304"></a><span class="lineno">  304</span>            <a class="code hl_variable" href="class_jsonlib_1_1_json_value.html#a647e42b6833ee493c409f97ff22ae520">type_</a> = <a class="code hl_enumvalue" href="namespace_jsonlib.html#a66702acb68ce0862104dbfbdc9160ff3a34f55eca38e0605a84f169ff61a2a396">JsonType::NUMBER</a>;</div>
+<div class="line"><a id="l00303" name="l00303"></a><span class="lineno"><a class="line" href="class_jsonlib_1_1_json_value.html#ac999e7bd9d83f78cce21d70d27630986">  303</a></span>        <span class="keyword">inline</span> <a class="code hl_function" href="class_jsonlib_1_1_json_value.html#a7997e67f09202214b560d117a5cb7fd9">JsonValue</a>&amp; <a class="code hl_function" href="class_jsonlib_1_1_json_value.html#ac999e7bd9d83f78cce21d70d27630986">operator=</a>(<span class="keyword">const</span> <span class="keywordtype">long</span> <span class="keywordtype">long</span>&amp; num) <span class="keyword">noexcept</span>{</div>
+<div class="line"><a id="l00304" name="l00304"></a><span class="lineno">  304</span>            <a class="code hl_variable" href="class_jsonlib_1_1_json_value.html#a647e42b6833ee493c409f97ff22ae520">type_</a> = JsonType::NUMBER;</div>
 <div class="line"><a id="l00305" name="l00305"></a><span class="lineno">  305</span>            <a class="code hl_variable" href="class_jsonlib_1_1_json_value.html#a5ef65219727e5c23099c3f8cb2f03091">content_</a> = std::to_string(num);</div>
 <div class="line"><a id="l00306" name="l00306"></a><span class="lineno">  306</span>            <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
 <div class="line"><a id="l00307" name="l00307"></a><span class="lineno">  307</span>        }</div>
 </div>
 <div class="line"><a id="l00308" name="l00308"></a><span class="lineno">  308</span></div>
 <div class="foldopen" id="foldopen00311" data-start="{" data-end="}">
-<div class="line"><a id="l00311" name="l00311"></a><span class="lineno"><a class="line" href="class_jsonlib_1_1_json_value.html#aba19a0a046666a4d88f2f7a9e6d45b59">  311</a></span>        <span class="keyword">inline</span> <a class="code hl_function" href="class_jsonlib_1_1_json_value.html#ad1f41301347a4a3d22a5cf8de0ecfbc6">JsonValue</a>&amp; <a class="code hl_function" href="class_jsonlib_1_1_json_value.html#aba19a0a046666a4d88f2f7a9e6d45b59">operator=</a>(<span class="keyword">const</span> <span class="keywordtype">double</span>&amp; num) <span class="keyword">noexcept</span> {</div>
-<div class="line"><a id="l00312" name="l00312"></a><span class="lineno">  312</span>            <a class="code hl_variable" href="class_jsonlib_1_1_json_value.html#a647e42b6833ee493c409f97ff22ae520">type_</a> = <a class="code hl_enumvalue" href="namespace_jsonlib.html#a66702acb68ce0862104dbfbdc9160ff3a34f55eca38e0605a84f169ff61a2a396">JsonType::NUMBER</a>;</div>
+<div class="line"><a id="l00311" name="l00311"></a><span class="lineno"><a class="line" href="class_jsonlib_1_1_json_value.html#aba19a0a046666a4d88f2f7a9e6d45b59">  311</a></span>        <span class="keyword">inline</span> <a class="code hl_function" href="class_jsonlib_1_1_json_value.html#a7997e67f09202214b560d117a5cb7fd9">JsonValue</a>&amp; <a class="code hl_function" href="class_jsonlib_1_1_json_value.html#aba19a0a046666a4d88f2f7a9e6d45b59">operator=</a>(<span class="keyword">const</span> <span class="keywordtype">double</span>&amp; num) <span class="keyword">noexcept</span> {</div>
+<div class="line"><a id="l00312" name="l00312"></a><span class="lineno">  312</span>            <a class="code hl_variable" href="class_jsonlib_1_1_json_value.html#a647e42b6833ee493c409f97ff22ae520">type_</a> = JsonType::NUMBER;</div>
 <div class="line"><a id="l00313" name="l00313"></a><span class="lineno">  313</span>            <a class="code hl_variable" href="class_jsonlib_1_1_json_value.html#a5ef65219727e5c23099c3f8cb2f03091">content_</a> = std::to_string(num);</div>
 <div class="line"><a id="l00314" name="l00314"></a><span class="lineno">  314</span>            <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
 <div class="line"><a id="l00315" name="l00315"></a><span class="lineno">  315</span>        }</div>
 </div>
 <div class="line"><a id="l00316" name="l00316"></a><span class="lineno">  316</span></div>
 <div class="foldopen" id="foldopen00319" data-start="{" data-end="}">
-<div class="line"><a id="l00319" name="l00319"></a><span class="lineno"><a class="line" href="class_jsonlib_1_1_json_value.html#a56703d2bd5add7be40ab837418d80268">  319</a></span>        <span class="keyword">inline</span> <a class="code hl_function" href="class_jsonlib_1_1_json_value.html#ad1f41301347a4a3d22a5cf8de0ecfbc6">JsonValue</a>&amp; <a class="code hl_function" href="class_jsonlib_1_1_json_value.html#a56703d2bd5add7be40ab837418d80268">operator=</a>(<span class="keyword">const</span> <span class="keywordtype">long</span> <span class="keywordtype">double</span>&amp; num) <span class="keyword">noexcept</span>{</div>
-<div class="line"><a id="l00320" name="l00320"></a><span class="lineno">  320</span>            <a class="code hl_variable" href="class_jsonlib_1_1_json_value.html#a647e42b6833ee493c409f97ff22ae520">type_</a> = <a class="code hl_enumvalue" href="namespace_jsonlib.html#a66702acb68ce0862104dbfbdc9160ff3a34f55eca38e0605a84f169ff61a2a396">JsonType::NUMBER</a>;</div>
+<div class="line"><a id="l00319" name="l00319"></a><span class="lineno"><a class="line" href="class_jsonlib_1_1_json_value.html#a56703d2bd5add7be40ab837418d80268">  319</a></span>        <span class="keyword">inline</span> <a class="code hl_function" href="class_jsonlib_1_1_json_value.html#a7997e67f09202214b560d117a5cb7fd9">JsonValue</a>&amp; <a class="code hl_function" href="class_jsonlib_1_1_json_value.html#a56703d2bd5add7be40ab837418d80268">operator=</a>(<span class="keyword">const</span> <span class="keywordtype">long</span> <span class="keywordtype">double</span>&amp; num) <span class="keyword">noexcept</span>{</div>
+<div class="line"><a id="l00320" name="l00320"></a><span class="lineno">  320</span>            <a class="code hl_variable" href="class_jsonlib_1_1_json_value.html#a647e42b6833ee493c409f97ff22ae520">type_</a> = JsonType::NUMBER;</div>
 <div class="line"><a id="l00321" name="l00321"></a><span class="lineno">  321</span>            <a class="code hl_variable" href="class_jsonlib_1_1_json_value.html#a5ef65219727e5c23099c3f8cb2f03091">content_</a> = std::to_string(num);</div>
 <div class="line"><a id="l00322" name="l00322"></a><span class="lineno">  322</span>            <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
 <div class="line"><a id="l00323" name="l00323"></a><span class="lineno">  323</span>        }</div>
 </div>
 <div class="line"><a id="l00324" name="l00324"></a><span class="lineno">  324</span></div>
 <div class="foldopen" id="foldopen00327" data-start="{" data-end="}">
-<div class="line"><a id="l00327" name="l00327"></a><span class="lineno"><a class="line" href="class_jsonlib_1_1_json_value.html#a482c4df5146c4251b6b9a46c1a4c4d49">  327</a></span>        <span class="keyword">inline</span> <a class="code hl_function" href="class_jsonlib_1_1_json_value.html#ad1f41301347a4a3d22a5cf8de0ecfbc6">JsonValue</a>&amp; <a class="code hl_function" href="class_jsonlib_1_1_json_value.html#a482c4df5146c4251b6b9a46c1a4c4d49">operator=</a>(<span class="keyword">const</span> std::nullptr_t&amp; n_ptr) <span class="keyword">noexcept</span>{</div>
-<div class="line"><a id="l00328" name="l00328"></a><span class="lineno">  328</span>            <a class="code hl_variable" href="class_jsonlib_1_1_json_value.html#a647e42b6833ee493c409f97ff22ae520">type_</a> = <a class="code hl_enumvalue" href="namespace_jsonlib.html#a66702acb68ce0862104dbfbdc9160ff3ac5dc611cb8490048db201f0710f4b379">JsonType::ISNULL</a>;</div>
+<div class="line"><a id="l00327" name="l00327"></a><span class="lineno"><a class="line" href="class_jsonlib_1_1_json_value.html#a482c4df5146c4251b6b9a46c1a4c4d49">  327</a></span>        <span class="keyword">inline</span> <a class="code hl_function" href="class_jsonlib_1_1_json_value.html#a7997e67f09202214b560d117a5cb7fd9">JsonValue</a>&amp; <a class="code hl_function" href="class_jsonlib_1_1_json_value.html#a482c4df5146c4251b6b9a46c1a4c4d49">operator=</a>(<span class="keyword">const</span> std::nullptr_t&amp; n_ptr) <span class="keyword">noexcept</span>{</div>
+<div class="line"><a id="l00328" name="l00328"></a><span class="lineno">  328</span>            <a class="code hl_variable" href="class_jsonlib_1_1_json_value.html#a647e42b6833ee493c409f97ff22ae520">type_</a> = JsonType::ISNULL;</div>
 <div class="line"><a id="l00329" name="l00329"></a><span class="lineno">  329</span>            <a class="code hl_variable" href="class_jsonlib_1_1_json_value.html#a5ef65219727e5c23099c3f8cb2f03091">content_</a> = <span class="keyword">false</span>;</div>
 <div class="line"><a id="l00330" name="l00330"></a><span class="lineno">  330</span>            <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
 <div class="line"><a id="l00331" name="l00331"></a><span class="lineno">  331</span>        }</div>
@@ -258,68 +312,69 @@ $(function(){ initResizable(false); });
 <div class="line"><a id="l00360" name="l00360"></a><span class="lineno">  360</span></div>
 <div class="line"><a id="l00368" name="l00368"></a><span class="lineno">  368</span>        std::<span class="keywordtype">string</span> serialize_pretty(const <span class="keywordtype">size_t</span>&amp; space_num = 2,const <span class="keywordtype">size_t</span>&amp; depth = 0) const noexcept;</div>
 <div class="line"><a id="l00369" name="l00369"></a><span class="lineno">  369</span></div>
-<div class="line"><a id="l00373" name="l00373"></a><span class="lineno"><a class="line" href="class_jsonlib_1_1_json_value.html#a29fdc98c1d623e610d45ca059e04b81c">  373</a></span>        inline <span class="keywordtype">bool</span> <a class="code hl_function" href="class_jsonlib_1_1_json_value.html#a29fdc98c1d623e610d45ca059e04b81c">is_object</a>() const noexcept { <span class="keywordflow">return</span> <a class="code hl_variable" href="class_jsonlib_1_1_json_value.html#a647e42b6833ee493c409f97ff22ae520">type_</a> == <a class="code hl_enumvalue" href="namespace_jsonlib.html#a66702acb68ce0862104dbfbdc9160ff3a8eee8e217391199668cbac89472ace53">JsonType::OBJECT</a>; }</div>
+<div class="line"><a id="l00373" name="l00373"></a><span class="lineno"><a class="line" href="class_jsonlib_1_1_json_value.html#a29fdc98c1d623e610d45ca059e04b81c">  373</a></span>        inline <span class="keywordtype">bool</span> <a class="code hl_function" href="class_jsonlib_1_1_json_value.html#a29fdc98c1d623e610d45ca059e04b81c">is_object</a>() const noexcept { <span class="keywordflow">return</span> <a class="code hl_variable" href="class_jsonlib_1_1_json_value.html#a647e42b6833ee493c409f97ff22ae520">type_</a> == JsonType::OBJECT; }</div>
 <div class="line"><a id="l00374" name="l00374"></a><span class="lineno">  374</span></div>
-<div class="line"><a id="l00378" name="l00378"></a><span class="lineno"><a class="line" href="class_jsonlib_1_1_json_value.html#a35fe61d8477e0697dcefd218893b12a7">  378</a></span>        <span class="keyword">inline</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="class_jsonlib_1_1_json_value.html#a35fe61d8477e0697dcefd218893b12a7">is_array</a>() const noexcept { <span class="keywordflow">return</span> <a class="code hl_variable" href="class_jsonlib_1_1_json_value.html#a647e42b6833ee493c409f97ff22ae520">type_</a> == <a class="code hl_enumvalue" href="namespace_jsonlib.html#a66702acb68ce0862104dbfbdc9160ff3acb4fb1757fb37c43cded35d3eb857c43">JsonType::ARRAY</a>; }</div>
+<div class="line"><a id="l00378" name="l00378"></a><span class="lineno"><a class="line" href="class_jsonlib_1_1_json_value.html#a35fe61d8477e0697dcefd218893b12a7">  378</a></span>        <span class="keyword">inline</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="class_jsonlib_1_1_json_value.html#a35fe61d8477e0697dcefd218893b12a7">is_array</a>() const noexcept { <span class="keywordflow">return</span> <a class="code hl_variable" href="class_jsonlib_1_1_json_value.html#a647e42b6833ee493c409f97ff22ae520">type_</a> == JsonType::ARRAY; }</div>
 <div class="line"><a id="l00379" name="l00379"></a><span class="lineno">  379</span></div>
-<div class="line"><a id="l00383" name="l00383"></a><span class="lineno"><a class="line" href="class_jsonlib_1_1_json_value.html#a44716b0878f2e6d45e51740786dfecec">  383</a></span>        <span class="keyword">inline</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="class_jsonlib_1_1_json_value.html#a44716b0878f2e6d45e51740786dfecec">is_string</a>() const noexcept { <span class="keywordflow">return</span> <a class="code hl_variable" href="class_jsonlib_1_1_json_value.html#a647e42b6833ee493c409f97ff22ae520">type_</a> == <a class="code hl_enumvalue" href="namespace_jsonlib.html#a66702acb68ce0862104dbfbdc9160ff3a63b588d5559f64f89a416e656880b949">JsonType::STRING</a>; }</div>
+<div class="line"><a id="l00383" name="l00383"></a><span class="lineno"><a class="line" href="class_jsonlib_1_1_json_value.html#a44716b0878f2e6d45e51740786dfecec">  383</a></span>        <span class="keyword">inline</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="class_jsonlib_1_1_json_value.html#a44716b0878f2e6d45e51740786dfecec">is_string</a>() const noexcept { <span class="keywordflow">return</span> <a class="code hl_variable" href="class_jsonlib_1_1_json_value.html#a647e42b6833ee493c409f97ff22ae520">type_</a> == JsonType::STRING; }</div>
 <div class="line"><a id="l00384" name="l00384"></a><span class="lineno">  384</span></div>
-<div class="line"><a id="l00388" name="l00388"></a><span class="lineno"><a class="line" href="class_jsonlib_1_1_json_value.html#a991c38772d9bebd496f172d512f124aa">  388</a></span>        <span class="keyword">inline</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="class_jsonlib_1_1_json_value.html#a991c38772d9bebd496f172d512f124aa">is_bool</a>() const noexcept { <span class="keywordflow">return</span> <a class="code hl_variable" href="class_jsonlib_1_1_json_value.html#a647e42b6833ee493c409f97ff22ae520">type_</a> == <a class="code hl_enumvalue" href="namespace_jsonlib.html#a66702acb68ce0862104dbfbdc9160ff3a8871649efb5cc3e8ba5f59e5956f9f86">JsonType::BOOLEN</a>; }</div>
+<div class="line"><a id="l00388" name="l00388"></a><span class="lineno"><a class="line" href="class_jsonlib_1_1_json_value.html#a991c38772d9bebd496f172d512f124aa">  388</a></span>        <span class="keyword">inline</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="class_jsonlib_1_1_json_value.html#a991c38772d9bebd496f172d512f124aa">is_bool</a>() const noexcept { <span class="keywordflow">return</span> <a class="code hl_variable" href="class_jsonlib_1_1_json_value.html#a647e42b6833ee493c409f97ff22ae520">type_</a> == JsonType::BOOL; }</div>
 <div class="line"><a id="l00389" name="l00389"></a><span class="lineno">  389</span></div>
-<div class="line"><a id="l00393" name="l00393"></a><span class="lineno"><a class="line" href="class_jsonlib_1_1_json_value.html#aa89bb183346c6350401867e2a6a2d226">  393</a></span>        <span class="keyword">inline</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="class_jsonlib_1_1_json_value.html#aa89bb183346c6350401867e2a6a2d226">is_number</a>() const noexcept { <span class="keywordflow">return</span> <a class="code hl_variable" href="class_jsonlib_1_1_json_value.html#a647e42b6833ee493c409f97ff22ae520">type_</a> == <a class="code hl_enumvalue" href="namespace_jsonlib.html#a66702acb68ce0862104dbfbdc9160ff3a34f55eca38e0605a84f169ff61a2a396">JsonType::NUMBER</a>; }</div>
+<div class="line"><a id="l00393" name="l00393"></a><span class="lineno"><a class="line" href="class_jsonlib_1_1_json_value.html#aa89bb183346c6350401867e2a6a2d226">  393</a></span>        <span class="keyword">inline</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="class_jsonlib_1_1_json_value.html#aa89bb183346c6350401867e2a6a2d226">is_number</a>() const noexcept { <span class="keywordflow">return</span> <a class="code hl_variable" href="class_jsonlib_1_1_json_value.html#a647e42b6833ee493c409f97ff22ae520">type_</a> == JsonType::NUMBER; }</div>
 <div class="line"><a id="l00394" name="l00394"></a><span class="lineno">  394</span></div>
-<div class="line"><a id="l00398" name="l00398"></a><span class="lineno"><a class="line" href="class_jsonlib_1_1_json_value.html#ab9a89f034e03234c0e9607c9f7d3a7c5">  398</a></span>        <span class="keyword">inline</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="class_jsonlib_1_1_json_value.html#ab9a89f034e03234c0e9607c9f7d3a7c5">is_int64</a>() const noexcept { <span class="keywordflow">return</span> <a class="code hl_variable" href="class_jsonlib_1_1_json_value.html#a647e42b6833ee493c409f97ff22ae520">type_</a> == <a class="code hl_enumvalue" href="namespace_jsonlib.html#a66702acb68ce0862104dbfbdc9160ff3a34f55eca38e0605a84f169ff61a2a396">JsonType::NUMBER</a> &amp;&amp; std::get&lt;std::string&gt;(<a class="code hl_variable" href="class_jsonlib_1_1_json_value.html#a5ef65219727e5c23099c3f8cb2f03091">content_</a>).find(<span class="charliteral">&#39;.&#39;</span>) == std::string::npos; }</div>
+<div class="line"><a id="l00398" name="l00398"></a><span class="lineno"><a class="line" href="class_jsonlib_1_1_json_value.html#ab9a89f034e03234c0e9607c9f7d3a7c5">  398</a></span>        <span class="keyword">inline</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="class_jsonlib_1_1_json_value.html#ab9a89f034e03234c0e9607c9f7d3a7c5">is_int64</a>() const noexcept { <span class="keywordflow">return</span> <a class="code hl_variable" href="class_jsonlib_1_1_json_value.html#a647e42b6833ee493c409f97ff22ae520">type_</a> == JsonType::NUMBER &amp;&amp; std::get&lt;std::string&gt;(<a class="code hl_variable" href="class_jsonlib_1_1_json_value.html#a5ef65219727e5c23099c3f8cb2f03091">content_</a>).find(<span class="charliteral">&#39;.&#39;</span>) == std::string::npos; }</div>
 <div class="line"><a id="l00399" name="l00399"></a><span class="lineno">  399</span></div>
-<div class="line"><a id="l00403" name="l00403"></a><span class="lineno"><a class="line" href="class_jsonlib_1_1_json_value.html#ae32d8c5515892671b9034450bce65031">  403</a></span>        <span class="keyword">inline</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="class_jsonlib_1_1_json_value.html#ae32d8c5515892671b9034450bce65031">is_double</a>() const noexcept { <span class="keywordflow">return</span> <a class="code hl_variable" href="class_jsonlib_1_1_json_value.html#a647e42b6833ee493c409f97ff22ae520">type_</a> == <a class="code hl_enumvalue" href="namespace_jsonlib.html#a66702acb68ce0862104dbfbdc9160ff3a34f55eca38e0605a84f169ff61a2a396">JsonType::NUMBER</a> &amp;&amp; std::get&lt;std::string&gt;(<a class="code hl_variable" href="class_jsonlib_1_1_json_value.html#a5ef65219727e5c23099c3f8cb2f03091">content_</a>).find(<span class="charliteral">&#39;.&#39;</span>) != std::string::npos; }</div>
+<div class="line"><a id="l00403" name="l00403"></a><span class="lineno"><a class="line" href="class_jsonlib_1_1_json_value.html#ae32d8c5515892671b9034450bce65031">  403</a></span>        <span class="keyword">inline</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="class_jsonlib_1_1_json_value.html#ae32d8c5515892671b9034450bce65031">is_double</a>() const noexcept { <span class="keywordflow">return</span> <a class="code hl_variable" href="class_jsonlib_1_1_json_value.html#a647e42b6833ee493c409f97ff22ae520">type_</a> == JsonType::NUMBER &amp;&amp; std::get&lt;std::string&gt;(<a class="code hl_variable" href="class_jsonlib_1_1_json_value.html#a5ef65219727e5c23099c3f8cb2f03091">content_</a>).find(<span class="charliteral">&#39;.&#39;</span>) != std::string::npos; }</div>
 <div class="line"><a id="l00404" name="l00404"></a><span class="lineno">  404</span></div>
-<div class="line"><a id="l00408" name="l00408"></a><span class="lineno"><a class="line" href="class_jsonlib_1_1_json_value.html#ac5a6b601e20877e4f52e41ae5fe4ebba">  408</a></span>        <span class="keyword">inline</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="class_jsonlib_1_1_json_value.html#ac5a6b601e20877e4f52e41ae5fe4ebba">is_null</a>() const noexcept { <span class="keywordflow">return</span> <a class="code hl_variable" href="class_jsonlib_1_1_json_value.html#a647e42b6833ee493c409f97ff22ae520">type_</a> == <a class="code hl_enumvalue" href="namespace_jsonlib.html#a66702acb68ce0862104dbfbdc9160ff3ac5dc611cb8490048db201f0710f4b379">JsonType::ISNULL</a>; }</div>
+<div class="line"><a id="l00408" name="l00408"></a><span class="lineno"><a class="line" href="class_jsonlib_1_1_json_value.html#ac5a6b601e20877e4f52e41ae5fe4ebba">  408</a></span>        <span class="keyword">inline</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="class_jsonlib_1_1_json_value.html#ac5a6b601e20877e4f52e41ae5fe4ebba">is_null</a>() const noexcept { <span class="keywordflow">return</span> <a class="code hl_variable" href="class_jsonlib_1_1_json_value.html#a647e42b6833ee493c409f97ff22ae520">type_</a> == JsonType::ISNULL; }</div>
 <div class="line"><a id="l00409" name="l00409"></a><span class="lineno">  409</span></div>
-<div class="line"><a id="l00413" name="l00413"></a><span class="lineno"><a class="line" href="class_jsonlib_1_1_json_value.html#a7a44ee6b24d6219524006db8338d0139">  413</a></span>        <span class="keyword">inline</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="class_jsonlib_1_1_json_value.html#a7a44ee6b24d6219524006db8338d0139">is_value</a>() const noexcept { <span class="keywordflow">return</span> <a class="code hl_variable" href="class_jsonlib_1_1_json_value.html#a647e42b6833ee493c409f97ff22ae520">type_</a> != <a class="code hl_enumvalue" href="namespace_jsonlib.html#a66702acb68ce0862104dbfbdc9160ff3a8eee8e217391199668cbac89472ace53">JsonType::OBJECT</a> &amp;&amp; <a class="code hl_variable" href="class_jsonlib_1_1_json_value.html#a647e42b6833ee493c409f97ff22ae520">type_</a> != <a class="code hl_enumvalue" href="namespace_jsonlib.html#a66702acb68ce0862104dbfbdc9160ff3acb4fb1757fb37c43cded35d3eb857c43">JsonType::ARRAY</a>; }</div>
+<div class="line"><a id="l00413" name="l00413"></a><span class="lineno"><a class="line" href="class_jsonlib_1_1_json_value.html#a7a44ee6b24d6219524006db8338d0139">  413</a></span>        <span class="keyword">inline</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="class_jsonlib_1_1_json_value.html#a7a44ee6b24d6219524006db8338d0139">is_value</a>() const noexcept { <span class="keywordflow">return</span> <a class="code hl_variable" href="class_jsonlib_1_1_json_value.html#a647e42b6833ee493c409f97ff22ae520">type_</a> != JsonType::OBJECT &amp;&amp; <a class="code hl_variable" href="class_jsonlib_1_1_json_value.html#a647e42b6833ee493c409f97ff22ae520">type_</a> != JsonType::ARRAY; }</div>
 <div class="line"><a id="l00414" name="l00414"></a><span class="lineno">  414</span></div>
 <div class="line"><a id="l00420" name="l00420"></a><span class="lineno">  420</span>        <span class="keywordtype">long</span> <span class="keywordtype">long</span> as_int64() <span class="keyword">const</span>;</div>
 <div class="line"><a id="l00426" name="l00426"></a><span class="lineno">  426</span>        <span class="keywordtype">double</span> as_double() <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00432" name="l00432"></a><span class="lineno">  432</span>        <span class="keywordtype">bool</span> as_bool() <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00433" name="l00433"></a><span class="lineno">  433</span></div>
-<div class="line"><a id="l00439" name="l00439"></a><span class="lineno">  439</span>        std::string as_string() <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00440" name="l00440"></a><span class="lineno">  440</span></div>
-<div class="line"><a id="l00447" name="l00447"></a><span class="lineno">  447</span>        <a class="code hl_typedef" href="namespace_jsonlib.html#a5401b730c48ae0be6c94f2aed129164e">JsonObject</a>&amp; as_object();</div>
-<div class="line"><a id="l00448" name="l00448"></a><span class="lineno">  448</span></div>
-<div class="line"><a id="l00455" name="l00455"></a><span class="lineno">  455</span>        <span class="keyword">const</span> <a class="code hl_typedef" href="namespace_jsonlib.html#a5401b730c48ae0be6c94f2aed129164e">JsonObject</a>&amp; as_object() <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00456" name="l00456"></a><span class="lineno">  456</span></div>
-<div class="line"><a id="l00463" name="l00463"></a><span class="lineno">  463</span>        <a class="code hl_typedef" href="namespace_jsonlib.html#a6b94d7e44358a1995b822724b5364a2c">JsonArray</a>&amp; as_array();</div>
-<div class="line"><a id="l00464" name="l00464"></a><span class="lineno">  464</span></div>
-<div class="line"><a id="l00471" name="l00471"></a><span class="lineno">  471</span>        <span class="keyword">const</span> <a class="code hl_typedef" href="namespace_jsonlib.html#a6b94d7e44358a1995b822724b5364a2c">JsonArray</a>&amp; as_array() <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00472" name="l00472"></a><span class="lineno">  472</span></div>
-<div class="line"><a id="l00480" name="l00480"></a><span class="lineno">  480</span>        <a class="code hl_class" href="class_jsonlib_1_1_json_value.html">JsonValue</a>&amp; at(<span class="keyword">const</span> <span class="keywordtype">size_t</span>&amp; index);</div>
-<div class="line"><a id="l00488" name="l00488"></a><span class="lineno">  488</span>        <a class="code hl_class" href="class_jsonlib_1_1_json_value.html">JsonValue</a>&amp; at(<span class="keyword">const</span> std::string&amp; key);</div>
-<div class="line"><a id="l00495" name="l00495"></a><span class="lineno">  495</span>        <a class="code hl_class" href="class_jsonlib_1_1_json_value.html">JsonValue</a>&amp; operator[](<span class="keyword">const</span> <span class="keywordtype">size_t</span>&amp; index);</div>
-<div class="line"><a id="l00502" name="l00502"></a><span class="lineno">  502</span>        <a class="code hl_class" href="class_jsonlib_1_1_json_value.html">JsonValue</a>&amp; operator[](<span class="keyword">const</span> std::string&amp; key);</div>
-<div class="line"><a id="l00503" name="l00503"></a><span class="lineno">  503</span></div>
-<div class="line"><a id="l00508" name="l00508"></a><span class="lineno">  508</span>        <span class="keywordtype">bool</span> hasKey(<span class="keyword">const</span> std::string&amp; key) <span class="keyword">const</span> <span class="keyword">noexcept</span>;</div>
-<div class="line"><a id="l00509" name="l00509"></a><span class="lineno">  509</span> </div>
-<div class="line"><a id="l00510" name="l00510"></a><span class="lineno">  510</span></div>
-<div class="line"><a id="l00516" name="l00516"></a><span class="lineno">  516</span>        <span class="keywordtype">void</span> push_back(<span class="keyword">const</span> <a class="code hl_class" href="class_jsonlib_1_1_json_value.html">JsonValue</a>&amp; jsonBasic);</div>
-<div class="line"><a id="l00517" name="l00517"></a><span class="lineno">  517</span></div>
-<div class="line"><a id="l00522" name="l00522"></a><span class="lineno">  522</span>        <span class="keywordtype">void</span> push_back(<a class="code hl_class" href="class_jsonlib_1_1_json_value.html">JsonValue</a>&amp;&amp; jsonBasic);</div>
+<div class="line"><a id="l00432" name="l00432"></a><span class="lineno">  432</span>        <span class="keywordtype">long</span> <span class="keywordtype">double</span> as_ldouble() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00438" name="l00438"></a><span class="lineno">  438</span>        <span class="keywordtype">bool</span> as_bool() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00439" name="l00439"></a><span class="lineno">  439</span></div>
+<div class="line"><a id="l00445" name="l00445"></a><span class="lineno">  445</span>        std::string as_string() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00446" name="l00446"></a><span class="lineno">  446</span></div>
+<div class="line"><a id="l00453" name="l00453"></a><span class="lineno">  453</span>        <a class="code hl_typedef" href="namespace_jsonlib.html#a5401b730c48ae0be6c94f2aed129164e">JsonObject</a>&amp; as_object();</div>
+<div class="line"><a id="l00454" name="l00454"></a><span class="lineno">  454</span></div>
+<div class="line"><a id="l00461" name="l00461"></a><span class="lineno">  461</span>        <span class="keyword">const</span> <a class="code hl_typedef" href="namespace_jsonlib.html#a5401b730c48ae0be6c94f2aed129164e">JsonObject</a>&amp; as_object() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00462" name="l00462"></a><span class="lineno">  462</span></div>
+<div class="line"><a id="l00469" name="l00469"></a><span class="lineno">  469</span>        <a class="code hl_typedef" href="namespace_jsonlib.html#a6b94d7e44358a1995b822724b5364a2c">JsonArray</a>&amp; as_array();</div>
+<div class="line"><a id="l00470" name="l00470"></a><span class="lineno">  470</span></div>
+<div class="line"><a id="l00477" name="l00477"></a><span class="lineno">  477</span>        <span class="keyword">const</span> <a class="code hl_typedef" href="namespace_jsonlib.html#a6b94d7e44358a1995b822724b5364a2c">JsonArray</a>&amp; as_array() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00478" name="l00478"></a><span class="lineno">  478</span></div>
+<div class="line"><a id="l00486" name="l00486"></a><span class="lineno">  486</span>        <a class="code hl_class" href="class_jsonlib_1_1_json_value.html">JsonValue</a>&amp; at(<span class="keyword">const</span> <span class="keywordtype">size_t</span>&amp; index);</div>
+<div class="line"><a id="l00494" name="l00494"></a><span class="lineno">  494</span>        <a class="code hl_class" href="class_jsonlib_1_1_json_value.html">JsonValue</a>&amp; at(<span class="keyword">const</span> std::string&amp; key);</div>
+<div class="line"><a id="l00501" name="l00501"></a><span class="lineno">  501</span>        <a class="code hl_class" href="class_jsonlib_1_1_json_value.html">JsonValue</a>&amp; operator[](<span class="keyword">const</span> <span class="keywordtype">size_t</span>&amp; index);</div>
+<div class="line"><a id="l00508" name="l00508"></a><span class="lineno">  508</span>        <a class="code hl_class" href="class_jsonlib_1_1_json_value.html">JsonValue</a>&amp; operator[](<span class="keyword">const</span> std::string&amp; key);</div>
+<div class="line"><a id="l00509" name="l00509"></a><span class="lineno">  509</span></div>
+<div class="line"><a id="l00514" name="l00514"></a><span class="lineno">  514</span>        <span class="keywordtype">bool</span> hasKey(<span class="keyword">const</span> std::string&amp; key) <span class="keyword">const</span> <span class="keyword">noexcept</span>;</div>
+<div class="line"><a id="l00515" name="l00515"></a><span class="lineno">  515</span> </div>
+<div class="line"><a id="l00516" name="l00516"></a><span class="lineno">  516</span></div>
+<div class="line"><a id="l00522" name="l00522"></a><span class="lineno">  522</span>        <span class="keywordtype">void</span> push_back(<span class="keyword">const</span> <a class="code hl_class" href="class_jsonlib_1_1_json_value.html">JsonValue</a>&amp; jsonBasic);</div>
 <div class="line"><a id="l00523" name="l00523"></a><span class="lineno">  523</span></div>
-<div class="line"><a id="l00528" name="l00528"></a><span class="lineno">  528</span>        <span class="keywordtype">void</span> insert(<span class="keyword">const</span> <span class="keywordtype">size_t</span>&amp; index, <span class="keyword">const</span> <a class="code hl_class" href="class_jsonlib_1_1_json_value.html">JsonValue</a>&amp; jsonBasic);</div>
+<div class="line"><a id="l00528" name="l00528"></a><span class="lineno">  528</span>        <span class="keywordtype">void</span> push_back(<a class="code hl_class" href="class_jsonlib_1_1_json_value.html">JsonValue</a>&amp;&amp; jsonBasic);</div>
 <div class="line"><a id="l00529" name="l00529"></a><span class="lineno">  529</span></div>
-<div class="line"><a id="l00534" name="l00534"></a><span class="lineno">  534</span>        <span class="keywordtype">void</span> insert(<span class="keyword">const</span> <span class="keywordtype">size_t</span>&amp; index, <a class="code hl_class" href="class_jsonlib_1_1_json_value.html">JsonValue</a>&amp;&amp; jsonBasic);</div>
+<div class="line"><a id="l00534" name="l00534"></a><span class="lineno">  534</span>        <span class="keywordtype">void</span> insert(<span class="keyword">const</span> <span class="keywordtype">size_t</span>&amp; index, <span class="keyword">const</span> <a class="code hl_class" href="class_jsonlib_1_1_json_value.html">JsonValue</a>&amp; jsonBasic);</div>
 <div class="line"><a id="l00535" name="l00535"></a><span class="lineno">  535</span></div>
-<div class="line"><a id="l00540" name="l00540"></a><span class="lineno">  540</span>        <span class="keywordtype">void</span> insert(<span class="keyword">const</span> std::string&amp; key,<span class="keyword">const</span> <a class="code hl_class" href="class_jsonlib_1_1_json_value.html">JsonValue</a>&amp; jsonBasic);</div>
+<div class="line"><a id="l00540" name="l00540"></a><span class="lineno">  540</span>        <span class="keywordtype">void</span> insert(<span class="keyword">const</span> <span class="keywordtype">size_t</span>&amp; index, <a class="code hl_class" href="class_jsonlib_1_1_json_value.html">JsonValue</a>&amp;&amp; jsonBasic);</div>
 <div class="line"><a id="l00541" name="l00541"></a><span class="lineno">  541</span></div>
-<div class="line"><a id="l00546" name="l00546"></a><span class="lineno">  546</span>        <span class="keywordtype">void</span> insert(<span class="keyword">const</span> std::string&amp; key,<a class="code hl_class" href="class_jsonlib_1_1_json_value.html">JsonValue</a>&amp;&amp; jsonBasic);</div>
-<div class="line"><a id="l00547" name="l00547"></a><span class="lineno">  547</span> </div>
-<div class="line"><a id="l00548" name="l00548"></a><span class="lineno">  548</span></div>
-<div class="line"><a id="l00556" name="l00556"></a><span class="lineno">  556</span>        <span class="keywordtype">void</span> erase(<span class="keyword">const</span> <span class="keywordtype">size_t</span>&amp; index);</div>
-<div class="line"><a id="l00563" name="l00563"></a><span class="lineno">  563</span>        <span class="keywordtype">void</span> erase(<span class="keyword">const</span> std::string&amp; key);</div>
-<div class="line"><a id="l00564" name="l00564"></a><span class="lineno">  564</span>    };</div>
+<div class="line"><a id="l00546" name="l00546"></a><span class="lineno">  546</span>        <span class="keywordtype">void</span> insert(<span class="keyword">const</span> std::string&amp; key,<span class="keyword">const</span> <a class="code hl_class" href="class_jsonlib_1_1_json_value.html">JsonValue</a>&amp; jsonBasic);</div>
+<div class="line"><a id="l00547" name="l00547"></a><span class="lineno">  547</span></div>
+<div class="line"><a id="l00552" name="l00552"></a><span class="lineno">  552</span>        <span class="keywordtype">void</span> insert(<span class="keyword">const</span> std::string&amp; key,<a class="code hl_class" href="class_jsonlib_1_1_json_value.html">JsonValue</a>&amp;&amp; jsonBasic);</div>
+<div class="line"><a id="l00553" name="l00553"></a><span class="lineno">  553</span> </div>
+<div class="line"><a id="l00554" name="l00554"></a><span class="lineno">  554</span></div>
+<div class="line"><a id="l00562" name="l00562"></a><span class="lineno">  562</span>        <span class="keywordtype">void</span> erase(<span class="keyword">const</span> <span class="keywordtype">size_t</span>&amp; index);</div>
+<div class="line"><a id="l00569" name="l00569"></a><span class="lineno">  569</span>        <span class="keywordtype">void</span> erase(<span class="keyword">const</span> std::string&amp; key);</div>
+<div class="line"><a id="l00570" name="l00570"></a><span class="lineno">  570</span>    };</div>
 </div>
-<div class="line"><a id="l00565" name="l00565"></a><span class="lineno">  565</span> </div>
-<div class="line"><a id="l00566" name="l00566"></a><span class="lineno">  566</span>}</div>
+<div class="line"><a id="l00571" name="l00571"></a><span class="lineno">  571</span> </div>
+<div class="line"><a id="l00572" name="l00572"></a><span class="lineno">  572</span>}</div>
 </div>
-<div class="line"><a id="l00567" name="l00567"></a><span class="lineno">  567</span> </div>
-<div class="line"><a id="l00568" name="l00568"></a><span class="lineno">  568</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00573" name="l00573"></a><span class="lineno">  573</span> </div>
+<div class="line"><a id="l00574" name="l00574"></a><span class="lineno">  574</span><span class="preprocessor">#endif</span></div>
 <div class="ttc" id="aclass_jsonlib_1_1_json_exception_html_a0713ceb565aab86d9a38421aa2d6ee77"><div class="ttname"><a href="class_jsonlib_1_1_json_exception.html#a0713ceb565aab86d9a38421aa2d6ee77">Jsonlib::JsonException::JsonException</a></div><div class="ttdeci">JsonException()</div><div class="ttdoc">默认构造函数。</div><div class="ttdef"><b>定义</b> jsonlib.h:44</div></div>
 <div class="ttc" id="aclass_jsonlib_1_1_json_exception_html_aa3f1cb93b5c2823057d67f2e9ab09141"><div class="ttname"><a href="class_jsonlib_1_1_json_exception.html#aa3f1cb93b5c2823057d67f2e9ab09141">Jsonlib::JsonException::JsonException</a></div><div class="ttdeci">JsonException(const std::string &amp;message)</div><div class="ttdoc">带异常描述文本的构造函数。</div><div class="ttdef"><b>定义</b> jsonlib.h:49</div></div>
 <div class="ttc" id="aclass_jsonlib_1_1_json_structure_exception_html_a8a1219f748bfdaafeea14635b2e1510c"><div class="ttname"><a href="class_jsonlib_1_1_json_structure_exception.html#a8a1219f748bfdaafeea14635b2e1510c">Jsonlib::JsonStructureException::JsonStructureException</a></div><div class="ttdeci">JsonStructureException()</div><div class="ttdoc">默认构造函数。</div><div class="ttdef"><b>定义</b> jsonlib.h:80</div></div>
@@ -338,6 +393,7 @@ $(function(){ initResizable(false); });
 <div class="ttc" id="aclass_jsonlib_1_1_json_value_html_a56703d2bd5add7be40ab837418d80268"><div class="ttname"><a href="class_jsonlib_1_1_json_value.html#a56703d2bd5add7be40ab837418d80268">Jsonlib::JsonValue::operator=</a></div><div class="ttdeci">JsonValue &amp; operator=(const long double &amp;num) noexcept</div><div class="ttdoc">浮点数类型赋值</div><div class="ttdef"><b>定义</b> jsonlib.h:319</div></div>
 <div class="ttc" id="aclass_jsonlib_1_1_json_value_html_a5ef65219727e5c23099c3f8cb2f03091"><div class="ttname"><a href="class_jsonlib_1_1_json_value.html#a5ef65219727e5c23099c3f8cb2f03091">Jsonlib::JsonValue::content_</a></div><div class="ttdeci">JsonVar content_</div><div class="ttdoc">存储JSON数据。</div><div class="ttdef"><b>定义</b> jsonlib.h:125</div></div>
 <div class="ttc" id="aclass_jsonlib_1_1_json_value_html_a647e42b6833ee493c409f97ff22ae520"><div class="ttname"><a href="class_jsonlib_1_1_json_value.html#a647e42b6833ee493c409f97ff22ae520">Jsonlib::JsonValue::type_</a></div><div class="ttdeci">JsonType type_</div><div class="ttdoc">表示当前对象存储的数据类型，</div><div class="ttdef"><b>定义</b> jsonlib.h:130</div></div>
+<div class="ttc" id="aclass_jsonlib_1_1_json_value_html_a7997e67f09202214b560d117a5cb7fd9"><div class="ttname"><a href="class_jsonlib_1_1_json_value.html#a7997e67f09202214b560d117a5cb7fd9">Jsonlib::JsonValue::JsonValue</a></div><div class="ttdeci">JsonValue(std::string_view str, std::string_view::const_iterator &amp;it)</div><div class="ttdoc">反序列化构造函数</div><div class="ttdef"><b>定义</b> jsonlib.cpp:290</div></div>
 <div class="ttc" id="aclass_jsonlib_1_1_json_value_html_a7a44ee6b24d6219524006db8338d0139"><div class="ttname"><a href="class_jsonlib_1_1_json_value.html#a7a44ee6b24d6219524006db8338d0139">Jsonlib::JsonValue::is_value</a></div><div class="ttdeci">bool is_value() const noexcept</div><div class="ttdoc">判断是不是值类型</div><div class="ttdef"><b>定义</b> jsonlib.h:413</div></div>
 <div class="ttc" id="aclass_jsonlib_1_1_json_value_html_a920fc29a14ad81aba9a5dff2bce603cd"><div class="ttname"><a href="class_jsonlib_1_1_json_value.html#a920fc29a14ad81aba9a5dff2bce603cd">Jsonlib::JsonValue::reset</a></div><div class="ttdeci">void reset() noexcept</div><div class="ttdoc">重置，设为null值</div><div class="ttdef"><b>定义</b> jsonlib.h:151</div></div>
 <div class="ttc" id="aclass_jsonlib_1_1_json_value_html_a92c3d3db71f2365b3c3e452c0934b303"><div class="ttname"><a href="class_jsonlib_1_1_json_value.html#a92c3d3db71f2365b3c3e452c0934b303">Jsonlib::JsonValue::JsonValue</a></div><div class="ttdeci">JsonValue(const long double &amp;num) noexcept</div><div class="ttdoc">浮点数类型构造</div><div class="ttdef"><b>定义</b> jsonlib.h:242</div></div>
@@ -350,26 +406,27 @@ $(function(){ initResizable(false); });
 <div class="ttc" id="aclass_jsonlib_1_1_json_value_html_abfd6888e4552e9e54a25645574056059"><div class="ttname"><a href="class_jsonlib_1_1_json_value.html#abfd6888e4552e9e54a25645574056059">Jsonlib::JsonValue::JsonVar</a></div><div class="ttdeci">std::variant&lt; bool, std::string, JsonObject, JsonArray &gt; JsonVar</div><div class="ttdef"><b>定义</b> jsonlib.h:119</div></div>
 <div class="ttc" id="aclass_jsonlib_1_1_json_value_html_ac5a6b601e20877e4f52e41ae5fe4ebba"><div class="ttname"><a href="class_jsonlib_1_1_json_value.html#ac5a6b601e20877e4f52e41ae5fe4ebba">Jsonlib::JsonValue::is_null</a></div><div class="ttdeci">bool is_null() const noexcept</div><div class="ttdoc">判断是不是null</div><div class="ttdef"><b>定义</b> jsonlib.h:408</div></div>
 <div class="ttc" id="aclass_jsonlib_1_1_json_value_html_ac999e7bd9d83f78cce21d70d27630986"><div class="ttname"><a href="class_jsonlib_1_1_json_value.html#ac999e7bd9d83f78cce21d70d27630986">Jsonlib::JsonValue::operator=</a></div><div class="ttdeci">JsonValue &amp; operator=(const long long &amp;num) noexcept</div><div class="ttdoc">长整数类型赋值</div><div class="ttdef"><b>定义</b> jsonlib.h:303</div></div>
-<div class="ttc" id="aclass_jsonlib_1_1_json_value_html_ad1f41301347a4a3d22a5cf8de0ecfbc6"><div class="ttname"><a href="class_jsonlib_1_1_json_value.html#ad1f41301347a4a3d22a5cf8de0ecfbc6">Jsonlib::JsonValue::JsonValue</a></div><div class="ttdeci">JsonValue(const std::string &amp;str, std::string::const_iterator &amp;it)</div><div class="ttdoc">反序列化构造函数</div><div class="ttdef"><b>定义</b> jsonlib.cpp:297</div></div>
 <div class="ttc" id="aclass_jsonlib_1_1_json_value_html_ad9972c3bc9065b7a9db2d4ddac1fae79"><div class="ttname"><a href="class_jsonlib_1_1_json_value.html#ad9972c3bc9065b7a9db2d4ddac1fae79">Jsonlib::JsonValue::type</a></div><div class="ttdeci">JsonType type() const noexcept</div><div class="ttdoc">获取当前对象数据类型</div><div class="ttdef"><b>定义</b> jsonlib.h:145</div></div>
 <div class="ttc" id="aclass_jsonlib_1_1_json_value_html_ae32d8c5515892671b9034450bce65031"><div class="ttname"><a href="class_jsonlib_1_1_json_value.html#ae32d8c5515892671b9034450bce65031">Jsonlib::JsonValue::is_double</a></div><div class="ttdeci">bool is_double() const noexcept</div><div class="ttdoc">判断是不是浮点</div><div class="ttdef"><b>定义</b> jsonlib.h:403</div></div>
+<div class="ttc" id="ajsonlib_8h_html_a0f231179dc45b24642bf36011f211d26"><div class="ttname"><a href="jsonlib_8h.html#a0f231179dc45b24642bf36011f211d26">NUMBER</a></div><div class="ttdeci">NUMBER</div><div class="ttdef"><b>定义</b> jsonlib.h:27</div></div>
+<div class="ttc" id="ajsonlib_8h_html_a1f9b51f648372a425785eae89c6df432"><div class="ttname"><a href="jsonlib_8h.html#a1f9b51f648372a425785eae89c6df432">ARRAY</a></div><div class="ttdeci">ARRAY</div><div class="ttdef"><b>定义</b> jsonlib.h:25</div></div>
+<div class="ttc" id="ajsonlib_8h_html_a3e5b8192e7d9ffaf3542f1210aec18dd"><div class="ttname"><a href="jsonlib_8h.html#a3e5b8192e7d9ffaf3542f1210aec18dd">BOOL</a></div><div class="ttdeci">BOOL</div><div class="ttdef"><b>定义</b> jsonlib.h:28</div></div>
+<div class="ttc" id="ajsonlib_8h_html_a5e8ede2d8e9bbd40b3389b5188eeed9f"><div class="ttname"><a href="jsonlib_8h.html#a5e8ede2d8e9bbd40b3389b5188eeed9f">OBJECT</a></div><div class="ttdeci">OBJECT</div><div class="ttdef"><b>定义</b> jsonlib.h:24</div></div>
 <div class="ttc" id="ajsonlib_8h_html_aac95152663bf6f53c741daf26e620394"><div class="ttname"><a href="jsonlib_8h.html#aac95152663bf6f53c741daf26e620394">JSONLIB_EXPORT</a></div><div class="ttdeci">#define JSONLIB_EXPORT</div><div class="ttdef"><b>定义</b> jsonlib.h:14</div></div>
+<div class="ttc" id="ajsonlib_8h_html_ad73ff29f818073afb75c8561001d9d5a"><div class="ttname"><a href="jsonlib_8h.html#ad73ff29f818073afb75c8561001d9d5a">ISNULL</a></div><div class="ttdeci">ISNULL</div><div class="ttdef"><b>定义</b> jsonlib.h:29</div></div>
+<div class="ttc" id="ajsonlib_8h_html_ae158940723622f094459a31491a87336"><div class="ttname"><a href="jsonlib_8h.html#ae158940723622f094459a31491a87336">STRING</a></div><div class="ttdeci">STRING</div><div class="ttdef"><b>定义</b> jsonlib.h:26</div></div>
 <div class="ttc" id="anamespace_jsonlib_html"><div class="ttname"><a href="namespace_jsonlib.html">Jsonlib</a></div><div class="ttdef"><b>定义</b> jsonlib.h:18</div></div>
 <div class="ttc" id="anamespace_jsonlib_html_a5401b730c48ae0be6c94f2aed129164e"><div class="ttname"><a href="namespace_jsonlib.html#a5401b730c48ae0be6c94f2aed129164e">Jsonlib::JsonObject</a></div><div class="ttdeci">std::map&lt; std::string, JsonValue &gt; JsonObject</div><div class="ttdoc">JsonObject类型</div><div class="ttdef"><b>定义</b> jsonlib.h:95</div></div>
-<div class="ttc" id="anamespace_jsonlib_html_a66702acb68ce0862104dbfbdc9160ff3"><div class="ttname"><a href="namespace_jsonlib.html#a66702acb68ce0862104dbfbdc9160ff3">Jsonlib::JsonType</a></div><div class="ttdeci">JsonType</div><div class="ttdoc">表示Json对象内部数据类型</div><div class="ttdef"><b>定义</b> jsonlib.h:23</div></div>
-<div class="ttc" id="anamespace_jsonlib_html_a66702acb68ce0862104dbfbdc9160ff3a34f55eca38e0605a84f169ff61a2a396"><div class="ttname"><a href="namespace_jsonlib.html#a66702acb68ce0862104dbfbdc9160ff3a34f55eca38e0605a84f169ff61a2a396">Jsonlib::JsonType::NUMBER</a></div><div class="ttdeci">@ NUMBER</div><div class="ttdef"><b>定义</b> jsonlib.h:27</div></div>
-<div class="ttc" id="anamespace_jsonlib_html_a66702acb68ce0862104dbfbdc9160ff3a63b588d5559f64f89a416e656880b949"><div class="ttname"><a href="namespace_jsonlib.html#a66702acb68ce0862104dbfbdc9160ff3a63b588d5559f64f89a416e656880b949">Jsonlib::JsonType::STRING</a></div><div class="ttdeci">@ STRING</div><div class="ttdef"><b>定义</b> jsonlib.h:26</div></div>
-<div class="ttc" id="anamespace_jsonlib_html_a66702acb68ce0862104dbfbdc9160ff3a8871649efb5cc3e8ba5f59e5956f9f86"><div class="ttname"><a href="namespace_jsonlib.html#a66702acb68ce0862104dbfbdc9160ff3a8871649efb5cc3e8ba5f59e5956f9f86">Jsonlib::JsonType::BOOLEN</a></div><div class="ttdeci">@ BOOLEN</div><div class="ttdef"><b>定义</b> jsonlib.h:28</div></div>
-<div class="ttc" id="anamespace_jsonlib_html_a66702acb68ce0862104dbfbdc9160ff3a8eee8e217391199668cbac89472ace53"><div class="ttname"><a href="namespace_jsonlib.html#a66702acb68ce0862104dbfbdc9160ff3a8eee8e217391199668cbac89472ace53">Jsonlib::JsonType::OBJECT</a></div><div class="ttdeci">@ OBJECT</div><div class="ttdef"><b>定义</b> jsonlib.h:24</div></div>
-<div class="ttc" id="anamespace_jsonlib_html_a66702acb68ce0862104dbfbdc9160ff3ac5dc611cb8490048db201f0710f4b379"><div class="ttname"><a href="namespace_jsonlib.html#a66702acb68ce0862104dbfbdc9160ff3ac5dc611cb8490048db201f0710f4b379">Jsonlib::JsonType::ISNULL</a></div><div class="ttdeci">@ ISNULL</div><div class="ttdef"><b>定义</b> jsonlib.h:29</div></div>
-<div class="ttc" id="anamespace_jsonlib_html_a66702acb68ce0862104dbfbdc9160ff3acb4fb1757fb37c43cded35d3eb857c43"><div class="ttname"><a href="namespace_jsonlib.html#a66702acb68ce0862104dbfbdc9160ff3acb4fb1757fb37c43cded35d3eb857c43">Jsonlib::JsonType::ARRAY</a></div><div class="ttdeci">@ ARRAY</div><div class="ttdef"><b>定义</b> jsonlib.h:25</div></div>
 <div class="ttc" id="anamespace_jsonlib_html_a6b94d7e44358a1995b822724b5364a2c"><div class="ttname"><a href="namespace_jsonlib.html#a6b94d7e44358a1995b822724b5364a2c">Jsonlib::JsonArray</a></div><div class="ttdeci">std::vector&lt; JsonValue &gt; JsonArray</div><div class="ttdoc">JsonArray类型</div><div class="ttdef"><b>定义</b> jsonlib.h:101</div></div>
-<div class="ttc" id="anamespace_jsonlib_html_afe22f0ed46489bd498922b7ac7ea2b3c"><div class="ttname"><a href="namespace_jsonlib.html#afe22f0ed46489bd498922b7ac7ea2b3c">Jsonlib::deserialize</a></div><div class="ttdeci">JSONLIB_EXPORT JsonValue deserialize(const std::string &amp;str)</div><div class="ttdoc">反序列化函数</div><div class="ttdef"><b>定义</b> jsonlib.cpp:277</div></div>
+<div class="ttc" id="anamespace_jsonlib_html_ad5751b7c51b6bac764d08e78242b5330"><div class="ttname"><a href="namespace_jsonlib.html#ad5751b7c51b6bac764d08e78242b5330">Jsonlib::deserialize</a></div><div class="ttdeci">JSONLIB_EXPORT JsonValue deserialize(std::string_view str)</div><div class="ttdoc">反序列化函数</div><div class="ttdef"><b>定义</b> jsonlib.cpp:271</div></div>
 </div><!-- fragment --></div><!-- contents -->
-<!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-制作者&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2
-</small></address>
 </div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_b7ac11114fbc4dd3226dd1c951458c5e.html">cpp-jsonlib</a></li><li class="navelem"><a class="el" href="dir_f2f2a70042cd1e7f728d819556198981.html">include</a></li><li class="navelem"><a class="el" href="jsonlib_8h.html">jsonlib.h</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
 </body>
 </html>

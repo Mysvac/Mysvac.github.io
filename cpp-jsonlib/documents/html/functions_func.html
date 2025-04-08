@@ -9,8 +9,20 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(function() { init_search(); });
+/* @license-end */
+</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -20,10 +32,22 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">mysvac-jsonlib<span id="projectnumber">&#160;1.0.0</span>
+   <div id="projectname">mysvac-jsonlib<span id="projectnumber">&#160;2.0.0</span>
    </div>
-   <div id="projectbrief">C++17轻量级JSON解析库</div>
+   <div id="projectbrief">一个轻量高效的C++17 JSON解析库</div>
   </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="搜索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
  </tr>
  </tbody>
 </table>
@@ -32,16 +56,52 @@
 <!-- 制作者 Doxygen 1.13.2 -->
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
 $(function() { codefold.init(0); });
 /* @license-end */
 </script>
 </div><!-- top -->
-<div id="doc-content">
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(function(){ initResizable(false); });
+$(function(){initNavTree('functions_func.html',''); initResizable(true); });
 /* @license-end */
 </script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
 <div class="contents">
 <div class="textblock">这里是所有函数, 及指向其所属类的链接: </div>
 
@@ -50,6 +110,7 @@ $(function(){ initResizable(false); });
 <li>as_bool()&#160;:&#160;<a class="el" href="class_jsonlib_1_1_json_value.html#ad50b26c50a8bf663420ef69c68bd8c4e">Jsonlib::JsonValue</a></li>
 <li>as_double()&#160;:&#160;<a class="el" href="class_jsonlib_1_1_json_value.html#ad6027c65c87b807f72f72b1756b27a5c">Jsonlib::JsonValue</a></li>
 <li>as_int64()&#160;:&#160;<a class="el" href="class_jsonlib_1_1_json_value.html#ac7e5e9c2effb97903812b456c13ff737">Jsonlib::JsonValue</a></li>
+<li>as_ldouble()&#160;:&#160;<a class="el" href="class_jsonlib_1_1_json_value.html#ab456a53d75c5761e805cd7c64219b81b">Jsonlib::JsonValue</a></li>
 <li>as_object()&#160;:&#160;<a class="el" href="class_jsonlib_1_1_json_value.html#aebed01c2b25093734742222246dd2b95">Jsonlib::JsonValue</a></li>
 <li>as_string()&#160;:&#160;<a class="el" href="class_jsonlib_1_1_json_value.html#a861f0efaae5f5fd00710a7058b729776">Jsonlib::JsonValue</a></li>
 <li>at()&#160;:&#160;<a class="el" href="class_jsonlib_1_1_json_value.html#ad48a7c74e6cccf1d1bb01c97adcebea6">Jsonlib::JsonValue</a></li>
@@ -89,12 +150,12 @@ $(function(){ initResizable(false); });
 <li>JsonException()&#160;:&#160;<a class="el" href="class_jsonlib_1_1_json_exception.html#a0713ceb565aab86d9a38421aa2d6ee77">Jsonlib::JsonException</a></li>
 <li>JsonStructureException()&#160;:&#160;<a class="el" href="class_jsonlib_1_1_json_structure_exception.html#a8a1219f748bfdaafeea14635b2e1510c">Jsonlib::JsonStructureException</a></li>
 <li>JsonTypeException()&#160;:&#160;<a class="el" href="class_jsonlib_1_1_json_type_exception.html#aa4ad178faef535087ef5f72b54461d43">Jsonlib::JsonTypeException</a></li>
-<li>JsonValue()&#160;:&#160;<a class="el" href="class_jsonlib_1_1_json_value.html#ad1f41301347a4a3d22a5cf8de0ecfbc6">Jsonlib::JsonValue</a></li>
+<li>JsonValue()&#160;:&#160;<a class="el" href="class_jsonlib_1_1_json_value.html#a7997e67f09202214b560d117a5cb7fd9">Jsonlib::JsonValue</a></li>
 </ul>
 
 
 <h3><a id="index_o" name="index_o"></a>- o -</h3><ul>
-<li>operator=()&#160;:&#160;<a class="el" href="class_jsonlib_1_1_json_value.html#a0b7a2cd1d5613d3bf0f03b3f4368a2f3">Jsonlib::JsonValue</a></li>
+<li>operator=()&#160;:&#160;<a class="el" href="class_jsonlib_1_1_json_value.html#a968ca8b73a8ff56eaeaa915719f6a89c">Jsonlib::JsonValue</a></li>
 <li>operator[]()&#160;:&#160;<a class="el" href="class_jsonlib_1_1_json_value.html#a310b141754d39d1167a8c15243c9f2b5">Jsonlib::JsonValue</a></li>
 </ul>
 
@@ -120,10 +181,12 @@ $(function(){ initResizable(false); });
 <li>type()&#160;:&#160;<a class="el" href="class_jsonlib_1_1_json_value.html#ad9972c3bc9065b7a9db2d4ddac1fae79">Jsonlib::JsonValue</a></li>
 </ul>
 </div><!-- contents -->
-<!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-制作者&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2
-</small></address>
 </div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
 </body>
 </html>

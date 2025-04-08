@@ -9,8 +9,20 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(function() { init_search(); });
+/* @license-end */
+</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -20,10 +32,22 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">mysvac-jsonlib<span id="projectnumber">&#160;1.0.0</span>
+   <div id="projectname">mysvac-jsonlib<span id="projectnumber">&#160;2.0.0</span>
    </div>
-   <div id="projectbrief">C++17轻量级JSON解析库</div>
+   <div id="projectbrief">一个轻量高效的C++17 JSON解析库</div>
   </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="搜索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
  </tr>
  </tbody>
 </table>
@@ -32,34 +56,66 @@
 <!-- 制作者 Doxygen 1.13.2 -->
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(function() { codefold.init(0); });
+var searchBox = new SearchBox("searchBox", "search/",'.html');
 /* @license-end */
 </script>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(function(){ initResizable(false); });
+$(function() { codefold.init(0); });
 /* @license-end */
 </script>
-<div id="nav-path" class="navpath">
-  <ul>
-<li class="navelem"><a class="el" href="dir_b7ac11114fbc4dd3226dd1c951458c5e.html">cpp-jsonlib</a></li><li class="navelem"><a class="el" href="dir_f2f2a70042cd1e7f728d819556198981.html">include</a></li>  </ul>
-</div>
 </div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('jsonlib_8h.html',''); initResizable(true); });
+/* @license-end */
+</script>
 <div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
 <div class="header">
   <div class="summary">
 <a href="#nested-classes">类</a> &#124;
 <a href="#namespaces">命名空间</a> &#124;
 <a href="#define-members">宏定义</a> &#124;
 <a href="#typedef-members">类型定义</a> &#124;
-<a href="#enum-members">枚举</a> &#124;
-<a href="#func-members">函数</a>  </div>
+<a href="#func-members">函数</a> &#124;
+<a href="#var-members">变量</a>  </div>
   <div class="headertitle"><div class="title">jsonlib.h 文件参考</div></div>
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &lt;string&gt;</code><br />
+<code>#include &lt;string_view&gt;</code><br />
 <code>#include &lt;map&gt;</code><br />
-<code>#include &lt;set&gt;</code><br />
 <code>#include &lt;vector&gt;</code><br />
 <code>#include &lt;variant&gt;</code><br />
 <code>#include &lt;exception&gt;</code><br />
@@ -103,26 +159,26 @@ $(function(){ initResizable(false); });
 <tr class="memdesc:a6b94d7e44358a1995b822724b5364a2c"><td class="mdescLeft">&#160;</td><td class="mdescRight">JsonArray类型  <br /></td></tr>
 <tr class="separator:a6b94d7e44358a1995b822724b5364a2c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
-枚举</h2></td></tr>
-<tr class="memitem:a66702acb68ce0862104dbfbdc9160ff3" id="r_a66702acb68ce0862104dbfbdc9160ff3"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_jsonlib.html#a66702acb68ce0862104dbfbdc9160ff3">Jsonlib::JsonType</a> { <br />
-&#160;&#160;<a class="el" href="namespace_jsonlib.html#a66702acb68ce0862104dbfbdc9160ff3a8eee8e217391199668cbac89472ace53">Jsonlib::OBJECT</a>
-, <a class="el" href="namespace_jsonlib.html#a66702acb68ce0862104dbfbdc9160ff3acb4fb1757fb37c43cded35d3eb857c43">Jsonlib::ARRAY</a>
-, <a class="el" href="namespace_jsonlib.html#a66702acb68ce0862104dbfbdc9160ff3a63b588d5559f64f89a416e656880b949">Jsonlib::STRING</a>
-, <a class="el" href="namespace_jsonlib.html#a66702acb68ce0862104dbfbdc9160ff3a34f55eca38e0605a84f169ff61a2a396">Jsonlib::NUMBER</a>
-, <br />
-&#160;&#160;<a class="el" href="namespace_jsonlib.html#a66702acb68ce0862104dbfbdc9160ff3a8871649efb5cc3e8ba5f59e5956f9f86">Jsonlib::BOOLEN</a>
-, <a class="el" href="namespace_jsonlib.html#a66702acb68ce0862104dbfbdc9160ff3ac5dc611cb8490048db201f0710f4b379">Jsonlib::ISNULL</a>
-<br />
- }</td></tr>
-<tr class="memdesc:a66702acb68ce0862104dbfbdc9160ff3"><td class="mdescLeft">&#160;</td><td class="mdescRight">表示Json对象内部数据类型  <a href="namespace_jsonlib.html#a66702acb68ce0862104dbfbdc9160ff3">更多...</a><br /></td></tr>
-<tr class="separator:a66702acb68ce0862104dbfbdc9160ff3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 函数</h2></td></tr>
-<tr class="memitem:afe22f0ed46489bd498922b7ac7ea2b3c" id="r_afe22f0ed46489bd498922b7ac7ea2b3c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#aac95152663bf6f53c741daf26e620394">JSONLIB_EXPORT</a> <a class="el" href="class_jsonlib_1_1_json_value.html">JsonValue</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_jsonlib.html#afe22f0ed46489bd498922b7ac7ea2b3c">Jsonlib::deserialize</a> (const std::string &amp;str)</td></tr>
-<tr class="memdesc:afe22f0ed46489bd498922b7ac7ea2b3c"><td class="mdescLeft">&#160;</td><td class="mdescRight">反序列化函数  <br /></td></tr>
-<tr class="separator:afe22f0ed46489bd498922b7ac7ea2b3c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad5751b7c51b6bac764d08e78242b5330" id="r_ad5751b7c51b6bac764d08e78242b5330"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#aac95152663bf6f53c741daf26e620394">JSONLIB_EXPORT</a> <a class="el" href="class_jsonlib_1_1_json_value.html">JsonValue</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_jsonlib.html#ad5751b7c51b6bac764d08e78242b5330">Jsonlib::deserialize</a> (std::string_view str)</td></tr>
+<tr class="memdesc:ad5751b7c51b6bac764d08e78242b5330"><td class="mdescLeft">&#160;</td><td class="mdescRight">反序列化函数  <br /></td></tr>
+<tr class="separator:ad5751b7c51b6bac764d08e78242b5330"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
+变量</h2></td></tr>
+<tr class="memitem:a5e8ede2d8e9bbd40b3389b5188eeed9f" id="r_a5e8ede2d8e9bbd40b3389b5188eeed9f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5e8ede2d8e9bbd40b3389b5188eeed9f">OBJECT</a></td></tr>
+<tr class="separator:a5e8ede2d8e9bbd40b3389b5188eeed9f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1f9b51f648372a425785eae89c6df432" id="r_a1f9b51f648372a425785eae89c6df432"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1f9b51f648372a425785eae89c6df432">ARRAY</a></td></tr>
+<tr class="separator:a1f9b51f648372a425785eae89c6df432"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae158940723622f094459a31491a87336" id="r_ae158940723622f094459a31491a87336"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae158940723622f094459a31491a87336">STRING</a></td></tr>
+<tr class="separator:ae158940723622f094459a31491a87336"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0f231179dc45b24642bf36011f211d26" id="r_a0f231179dc45b24642bf36011f211d26"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0f231179dc45b24642bf36011f211d26">NUMBER</a></td></tr>
+<tr class="separator:a0f231179dc45b24642bf36011f211d26"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3e5b8192e7d9ffaf3542f1210aec18dd" id="r_a3e5b8192e7d9ffaf3542f1210aec18dd"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3e5b8192e7d9ffaf3542f1210aec18dd">BOOL</a></td></tr>
+<tr class="separator:a3e5b8192e7d9ffaf3542f1210aec18dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad73ff29f818073afb75c8561001d9d5a" id="r_ad73ff29f818073afb75c8561001d9d5a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad73ff29f818073afb75c8561001d9d5a">ISNULL</a></td></tr>
+<tr class="separator:ad73ff29f818073afb75c8561001d9d5a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">宏定义说明</h2>
 <a id="aac95152663bf6f53c741daf26e620394" name="aac95152663bf6f53c741daf26e620394"></a>
@@ -153,11 +209,105 @@ $(function(){ initResizable(false); });
 
 </div>
 </div>
+<h2 class="groupheader">变量说明</h2>
+<a id="a1f9b51f648372a425785eae89c6df432" name="a1f9b51f648372a425785eae89c6df432"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1f9b51f648372a425785eae89c6df432">&#9670;&#160;</a></span>ARRAY</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ARRAY</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>JSON 数组类型 </p>
+
+</div>
+</div>
+<a id="a3e5b8192e7d9ffaf3542f1210aec18dd" name="a3e5b8192e7d9ffaf3542f1210aec18dd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3e5b8192e7d9ffaf3542f1210aec18dd">&#9670;&#160;</a></span>BOOL</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">BOOL</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>JSON 布尔类型，值类型 </p>
+
+</div>
+</div>
+<a id="ad73ff29f818073afb75c8561001d9d5a" name="ad73ff29f818073afb75c8561001d9d5a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad73ff29f818073afb75c8561001d9d5a">&#9670;&#160;</a></span>ISNULL</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ISNULL</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>JSON null类型，值类型 </p>
+
+</div>
+</div>
+<a id="a0f231179dc45b24642bf36011f211d26" name="a0f231179dc45b24642bf36011f211d26"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0f231179dc45b24642bf36011f211d26">&#9670;&#160;</a></span>NUMBER</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">NUMBER</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>JSON 数值类型，值类型 </p>
+
+</div>
+</div>
+<a id="a5e8ede2d8e9bbd40b3389b5188eeed9f" name="a5e8ede2d8e9bbd40b3389b5188eeed9f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5e8ede2d8e9bbd40b3389b5188eeed9f">&#9670;&#160;</a></span>OBJECT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">OBJECT</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>JSON 对象类型 </p>
+
+</div>
+</div>
+<a id="ae158940723622f094459a31491a87336" name="ae158940723622f094459a31491a87336"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae158940723622f094459a31491a87336">&#9670;&#160;</a></span>STRING</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">STRING</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>JSON 字符串类型，值类型 </p>
+
+</div>
+</div>
 </div><!-- contents -->
-<!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-制作者&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2
-</small></address>
 </div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_b7ac11114fbc4dd3226dd1c951458c5e.html">cpp-jsonlib</a></li><li class="navelem"><a class="el" href="dir_f2f2a70042cd1e7f728d819556198981.html">include</a></li><li class="navelem"><a class="el" href="jsonlib_8h.html">jsonlib.h</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
 </body>
 </html>
